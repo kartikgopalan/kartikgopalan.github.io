@@ -1,0 +1,613 @@
+@charset "UTF-8";
+
+/* global whitespace reset (leftjustified.net)	*/
+* { padding: 0; margin: 0; }
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, fieldset, address { margin: 1em 0; }
+fieldset { padding: .5em; }
+/* end whitespace reset */
+
+/*
+About the main fonts: Verdana is common on macs and PCs,
+Geneva is for older macs, Lucida is for Unix
+*/
+
+body {
+	font-family: Verdana, Geneva, Lucida, sans-serif;
+	font-size: 13px;
+	line-height: 1.4em;
+	color: #333;
+	background: #fff;
+	text-align: center;		/* so IE can center divs */
+	}
+
+/*Page Layout
+================================================*/	
+		
+#header {
+	width: 780px;
+	margin: 0 auto;
+	height: 105px;
+	background: #fff url(/img/banner3.gif) 15px 38px no-repeat;
+	}
+
+a#BUlink {  
+    float: right;
+    display: inline;        /*fixes IE double-margin float bug*/
+    width: 190px;
+    height: 75px;
+    margin: 10px 0px 0 0;
+    background: url(/img/bu.jpg) center no-repeat;
+    }
+
+#wrapper {
+	min-height: 820px;
+	position: relative;
+	width: 780px;
+	margin: 0 auto;
+	padding-bottom: 15px;
+	text-align: center;				
+	background: #fff;
+	}
+
+*html #wrapper {
+    height: 820px;
+    }
+
+#content {	 
+	margin: 37px 25px 0 220px;
+	text-align: left;
+	}
+
+#sidebar {
+	position: absolute;
+	left: 10px;
+	top: 55px;
+	width: 170px;
+	padding-right: 5px;
+	border-right: 1px solid #bbb;
+	height: 30em;
+	text-align: left;
+	}
+
+#footer {		
+	}
+	
+.clear_element {
+	clear: both;
+	}
+
+/* Navigation
+================================================*/
+
+/* "Lucida Grande" is for macs, "Lucida Sans Unicode" is for PCs */
+
+
+#nav {	  
+	font-size: 12px;
+	font-family: arial,"Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, Lucida, sans-serif;
+	font-weight: normal;
+	text-align: center;
+	min-height: 24px;
+	}
+
+*html #nav {
+    height: 1px;
+    }
+
+#nav a {
+	float: left;
+	display: inline;	
+	width: 107px;
+	padding: 3px 0 2px 0;
+/*	background: #f7f7f7; */
+	background: lightgray; 
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-right: none;
+	}  
+
+
+#nav a:hover {
+	color: #933;
+	background: #ececec;
+	}
+
+#nav a.active:link, 
+#nav a.active:visited, #nav a.active:hover {
+	color: #933;
+	background: #ececec;
+	}
+
+#nav a#first {
+	margin-left: 11px;
+	}
+	
+#nav a#last {
+	border-right: 1px solid #ccc;
+	}	 
+
+/* Text Elements
+================================================*/
+
+.box {
+	float: left;
+	display: inline;
+	padding-left: 12px;
+	margin-bottom: 10px;
+	}
+	
+.holder {
+	float: left;
+	display: inline;
+	width: 100%;
+	clear: both;
+	margin: 10px 0;
+	}
+
+.blockquote {
+	margin: 1.5em 3em 1.5em 1em;
+	line-height: 1.3em;
+	}	 
+
+h1,h2,h3 {
+	font-family: "Lucida Grande", arial, Lucida, sans-serif;
+	clear:both;
+	color: #111;
+	margin-top: 1.1em;
+	margin-bottom: 1.1em;
+	}
+
+#content h1 {
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+	}
+
+#content h2 {	
+	font-size: 16px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #999;
+	}
+
+#content h3 {
+	margin: 0.7em 0;
+	font-size: 14px;
+	font-weight: bold;
+	}
+	
+#sidebar h1 {
+	font-size: 15px;
+	font-weight: bold;
+	padding: 0 6px 0 10px;
+	margin: 0.5em 0 0.8em 0;
+	}
+
+.alert {
+	font-size: 12px;
+	margin-left: 20px; 
+	padding: 0 5px; 
+	background: #FF9D09;
+	color: white; 
+	}
+
+/*List Styles
+================================================*/
+
+#sidebar ul, #content ul{
+	margin: 0.6em 5px 0 0;
+	text-align:left;
+	list-style: none;
+	line-height: 1.4em;
+	}	
+
+#sidebar li, #content li{
+	padding: 0 0 0.4em 14px;
+	background: url(/img/diamond666.gif) no-repeat 0 0.5em;
+	}
+
+#sidebar li {
+	margin-left: -3px;
+	}
+
+#content ol {
+	border-top: 1px solid white; /*fix collapsing margins!*/
+	margin-top: -0.7em;
+	line-height: 1.3;
+	text-align:left;	
+	}
+
+*html #content ol {				/* seen by IE only */
+	margin-left: 10px;
+	}
+
+#content ol li {
+	list-style: decimal outside;
+	padding-left: 5px;
+	margin-left: 2em;
+	margin-top: 0.7em;
+	background: none;
+	}
+
+/*Links
+================================================*/
+a {outline: none;}
+
+a:link, a:visited {
+	color: #0577c1;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #0577c1;
+	text-decoration: underline;
+}
+	
+a:hover, li.current a:link, li.current a:visited {
+	color: #993333;
+	text-decoration: underline;
+	}
+
+/*Figures
+================================================*/
+
+img {	
+	position: relative;
+	float: right;
+	display: inline;
+	margin: 0.5em 0em 1.5em 1em;
+	padding: 4px;
+	border: 1px solid #ccc;
+	}
+	
+img.left {
+	float: left;
+	display: inline;
+	margin-left: 0;
+	margin-right: 1em;
+	}
+
+.Rfigure {
+	width: 150px;
+	position: relative;
+	float: right;
+	display: inline;
+	margin: 4px 0 15px 15px;
+	}
+	
+.Lfigure {
+	width: 150px;
+	position: relative;
+	float: left;
+	display: inline;
+	margin: 4px 15px 15px 0;
+	background: #eee;
+	}
+
+#content .Rfigure img, #content .Lfigure img {
+	float: none;
+	margin: 0 0 4px 0;
+	}
+
+#content .Rfigure p, #content .Lfigure p{
+	font-size: 11px;
+	margin: 0;
+	line-height: 1.2;
+	}		
+
+/*Section-Specific Layout
+================================================*/
+
+.home #content h1 {
+    font-size: 19px;
+    color: #933;
+    }
+    
+.home h1 .dots {
+    position: relative;
+    font-family: georgia, "Trenuchet MS", lucida, sans-serif;
+    top: -2px;
+    }
+    
+.home img {
+	margin: 0 10px 25px 0;
+	width: 115px;
+	height: 115px;
+	}
+	
+ /*--------------------------------*/  
+
+.research #sidebar li, .home #sidebar li, .people #sidebar li, .internal #sidebar li {
+	padding-bottom: 1.2em;
+	}
+
+.research #content h1  {
+    color: #933;
+    font-size: 20px;
+    }
+
+.publications #content {
+	margin-left: 207px;
+	}
+
+.publications #sidebar {
+	width: 160px;
+	}
+
+.publications #sidebar li {
+	padding-bottom: 0.5em;
+	}	 
+
+.publications #sidebar h1 {
+	margin-bottom: 0.5em;
+	}	 
+
+.publications .box {
+	margin-right: 7px;
+	margin-bottom: 12px;
+	}
+	
+.publications #content h2 {
+	margin-bottom: 1.1em;
+	}
+	
+#content a.toplink {
+	float: right;
+	text-decoration: none;
+	}
+
+a.pagelink {
+	font-size: 9px;
+	color: #fff;
+	}
+ 
+ /*--------------------------------*/ 
+
+.education #content, .facilities #content, .news #content {
+    margin-left: 35px;
+    margin-right: 35px;
+    }    
+
+.education #content {
+	margin-top: 25px;
+	}
+
+.education #content p {
+	margin-right: 170px;	
+	}
+
+.education #content h1 {
+    float: left;
+    width: 100%;
+    border-bottom: 1px dashed #999;
+    padding-bottom: 7px;
+    margin: 10px 0;
+    font-size: 18px;
+    }
+	
+.education .holder {
+	margin-bottom: 1.5em;
+	}
+
+.education .holder p {
+	margin: 0;
+	}	
+ 
+.education .holder img {
+    margin: 0;
+    }
+
+ /*--------------------------------*/
+
+.facilities #content h1, .news #content h1 {
+    color: #111;
+    }
+
+.facilities #content p {
+	margin-right: 300px;
+	}
+
+.facilities #content .holder img {
+	float: left;
+	display: inline;
+	width: 150px;
+	height: 150px;
+	margin: 0.2em 0 2px 0;
+	}
+	
+.facilities #content .holder ul {
+	margin-left: 180px;
+	margin-top: 0;
+	}
+ 
+.facilities #content h3 {
+	clear: none;
+	margin: 0 0 10px 180px;
+	font-size: 13px;
+	font-weight: bold;
+	}		 
+ 
+  /*--------------------------------*/
+
+.news .holder {
+	margin-top: 4px;
+	margin-bottom: 20px;
+	}
+
+.news #content .holder img {
+	float: left;
+	display: inline;
+	width: 100px;
+	margin: 3px 12px 0 0;
+	}
+ 
+.news #content .holder img.ENIC {
+	float: left;
+	display: inline;
+	/*border: 1px solid blue;*/
+	padding: none;
+	width: 140px;
+	margin: 5px 0 0 0;
+	}
+
+.news #content .holder ul {
+	margin-left: 165px;
+	margin-top: 3px;
+	}
+	
+.news #content p {
+	margin: 0;
+	}	
+
+.news #content .ref {
+	line-height: 1.3em;
+	}
+
+.news #content h2 {
+	margin-bottom: 25px;
+	}
+
+.news #content h2.ENIC {
+	margin-bottom: 20px;
+	}
+
+.news #content h2.photo_date {
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #933;
+	}
+	
+.news #content h3 {
+	font-family: arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #933;
+	margin-bottom: 0;
+	border-bottom: none;
+	}  
+
+ /*--------------------------------*/
+ 
+.people #content {
+	margin-left: 178px;
+	}
+
+.people #sidebar {
+	width: 130px;
+	}
+
+.people .holder {
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #777;
+	}
+	
+.people #first_person {
+	margin-top: 0;
+	}
+
+.people #last_person {
+	border: none;
+	}
+
+.people div.picbox {
+	float: left;
+	display: inline;
+	margin-top: 0.25em;
+	margin-bottom: 1px;
+	padding: 0;
+	}
+
+.people div.picbox img {
+	float: left;
+	display: inline;
+/*	width: 140px; */
+	height: 140px; 
+	margin: 0 0 2px 0;
+	}
+
+.people #content .holder p {
+	margin: 0 0 0 160px;
+	}
+
+.people #content .holder ul {
+	margin: 0.5em 0 0.5em 165px;
+	}
+
+.people #content h1 {
+	font-size: 19px;
+	color: #933;
+	}
+
+.people #content h3 {
+	font-size: 14px;
+	margin: 0;
+	}
+	
+ .people #content a {
+	font-size: 12px;
+	margin: 0;
+	}
+
+/*Galerie
+================================================*/
+
+#thumbnails {
+    margin: 10px auto 10px auto;
+    font-size: 15px;
+    color: #555;
+    }
+
+#thumbnails img {    
+    margin-bottom: 10px;    
+    }
+
+#galerie {
+    display: none;
+    }
+
+/*Lightbox
+================================================*/
+
+#lightbox{
+	background-color:#fafafa;
+	padding: 10px 10px 10px 10px;
+	}
+
+#lightboxDetails{
+    font-family: "Lucida Grande", "Lucida Sans Unicode", arial, Lucida, sans-serif;
+	}
+
+#lightboxCaption{
+    float: left;
+    display: inline;
+    margin: 5px 0 0 0;
+    color: #333; 
+    font-size: 13px;
+    text-align: left;
+    }
+    
+#keyboardMsg{ 
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 14px;
+    font-size: 11px; 
+    color: #666;
+    }
+    
+#closeButton{ display: none;}
+
+#lightbox img{ border: none; float: none; margin: 0; padding: 0; clear: both;} 
+#overlay img{ border: none; }
+
+#overlay{ background-image: url(./lightbox/overlay.png); }
+
+* html #overlay{
+	background-color: #333;
+	back\ground-color: transparent;
+	background-image: url(./lightbox/blank.gif);
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/nanoengineering/lightbox/overlay.png", sizingMethod="scale");
+	}

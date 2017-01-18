@@ -1,0 +1,90 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ASYNC_LOG_INVALID	umem.c	70;"	d	file:
+ASYNC_LOG_MAX	umem.c	69;"	d	file:
+ASYNC_PF_PER_VCPU	umem.c	46;"	d	file:
+ASYNC_REQ_MAX	umem.c	48;"	d	file:
+KVM_MAX_VCPUS	umem.c	45;"	d	file:
+MEM_CGROUP_CHARGE_TYPE_CACHE	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_CACHE = 0, $/;"	e	enum:charge_type	file:
+MEM_CGROUP_CHARGE_TYPE_DROP	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_DROP,    \/* a page was unused swap cache *\/$/;"	e	enum:charge_type	file:
+MEM_CGROUP_CHARGE_TYPE_FORCE	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_FORCE,   \/* used by force_empty *\/$/;"	e	enum:charge_type	file:
+MEM_CGROUP_CHARGE_TYPE_MAPPED	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_MAPPED,$/;"	e	enum:charge_type	file:
+MEM_CGROUP_CHARGE_TYPE_SHMEM	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_SHMEM,   \/* used by page migration of shmem *\/$/;"	e	enum:charge_type	file:
+MEM_CGROUP_CHARGE_TYPE_SWAPOUT	umem.c	/^	MEM_CGROUP_CHARGE_TYPE_SWAPOUT, \/* for accounting swapcache *\/$/;"	e	enum:charge_type	file:
+NR_CHARGE_TYPE	umem.c	/^	NR_CHARGE_TYPE,                                                                                                  $/;"	e	enum:charge_type	file:
+PG_MAX	umem.c	597;"	d	file:
+REQ_MAX	umem.c	521;"	d	file:
+SYNC_REQ_MAX	umem.c	49;"	d	file:
+UMEMIO	umem.h	36;"	d
+UMEM_INIT	umem.h	39;"	d
+UMEM_MAKE_VMA_ANONYMOUS	umem.h	40;"	d
+__LINUX_UMEM_H	umem.h	25;"	d
+async_log	umem.c	/^	pgoff_t async_log[ASYNC_LOG_MAX];$/;"	m	struct:umem	file:
+async_log_index	umem.c	/^	int async_log_index;$/;"	m	struct:umem	file:
+async_req	umem.c	/^	pgoff_t *async_req;$/;"	m	struct:umem	file:
+async_req_max	umem.c	/^	int async_req_max;$/;"	m	struct:umem	file:
+async_req_nr	umem.c	/^	int async_req_nr;$/;"	m	struct:umem	file:
+cached	umem.c	/^	unsigned long *cached;$/;"	m	struct:umem	file:
+charge_type	umem.c	/^enum charge_type {$/;"	g	file:
+faulted	umem.c	/^	unsigned long *faulted;$/;"	m	struct:umem	file:
+generic_file_vm_ops	umem.c	/^const struct vm_operations_struct generic_file_vm_ops = {$/;"	v	typeref:struct:vm_operations_struct
+list	umem.c	/^	struct list_head list;$/;"	m	struct:umem_page_req_list	typeref:struct:umem_page_req_list::list_head	file:
+lock	umem.c	/^	spinlock_t lock;$/;"	m	struct:umem	file:
+mem_cgroup_cache_charge	umem.c	/^int mem_cgroup_cache_charge(struct page *page, struct mm_struct *mm,                                      $/;"	f
+mmapped	umem.c	/^	bool mmapped;$/;"	m	struct:umem	file:
+padding	umem.h	/^	__s32 padding;$/;"	m	struct:umem_init
+page_is_file_cache	umem.c	/^static inline int page_is_file_cache(struct page *page)$/;"	f	file:
+page_wait	umem.c	/^	wait_queue_head_t *page_wait;$/;"	m	struct:umem	file:
+pgoff	umem.c	/^	pgoff_t pgoff;$/;"	m	struct:umem_page_req_list	file:
+pgoff_end	umem.c	/^	pgoff_t pgoff_end;$/;"	m	struct:umem	file:
+req_list	umem.c	/^	struct list_head req_list;$/;"	m	struct:umem	typeref:struct:umem::list_head	file:
+req_list_nr	umem.c	/^	int req_list_nr;$/;"	m	struct:umem	file:
+req_list_wait	umem.c	/^	wait_queue_head_t req_list_wait;$/;"	m	struct:umem	file:
+req_wait	umem.c	/^	wait_queue_head_t req_wait;$/;"	m	struct:umem	file:
+shmem_fd	umem.h	/^	__s32 shmem_fd;$/;"	m	struct:umem_init
+shmem_filp	umem.c	/^	struct file *shmem_filp;$/;"	m	struct:umem	typeref:struct:umem::file	file:
+shmem_zero_setup	umem.c	/^int shmem_zero_setup(struct vm_area_struct *vma)$/;"	f
+size	umem.c	/^	loff_t size;$/;"	m	struct:umem	file:
+size	umem.h	/^	__u64 size;		\/* in bytes *\/$/;"	m	struct:umem_init
+sync_req	umem.c	/^	pgoff_t *sync_req;$/;"	m	struct:umem	file:
+sync_req_bitmap	umem.c	/^	unsigned long *sync_req_bitmap;$/;"	m	struct:umem	file:
+sync_req_max	umem.c	/^	int sync_req_max;$/;"	m	struct:umem	file:
+sync_wait_bitmap	umem.c	/^	unsigned long *sync_wait_bitmap;$/;"	m	struct:umem	file:
+task	umem.c	/^	struct task_struct *task;$/;"	m	struct:umem	typeref:struct:umem::task_struct	file:
+umem	umem.c	/^struct umem {$/;"	s	file:
+umem_bitmap_bytes	umem.c	/^static unsigned long umem_bitmap_bytes(unsigned long pgoff_end)$/;"	f	file:
+umem_copy_page_request	umem.c	/^static bool umem_copy_page_request(struct umem *umem,$/;"	f	file:
+umem_dev	umem.c	/^static struct miscdevice umem_dev = {$/;"	v	typeref:struct:miscdevice	file:
+umem_dev_exit	umem.c	/^module_exit(umem_dev_exit);$/;"	v
+umem_dev_exit	umem.c	/^static void __exit umem_dev_exit(void)$/;"	f	file:
+umem_dev_init	umem.c	/^module_init(umem_dev_init);$/;"	v
+umem_dev_init	umem.c	/^static int __init umem_dev_init(void)$/;"	f	file:
+umem_fatal_signal_pending	umem.c	/^static bool umem_fatal_signal_pending(struct task_struct *p)$/;"	f	file:
+umem_fault	umem.c	/^static int umem_fault(struct vm_area_struct *vma, struct vm_fault *vmf)$/;"	f	file:
+umem_fops	umem.c	/^static struct file_operations umem_fops = {$/;"	v	typeref:struct:file_operations	file:
+umem_free	umem.c	/^static void umem_free(struct umem *umem)$/;"	f	file:
+umem_init	umem.c	/^static int umem_init(struct file *filp, struct umem_init *uinit)$/;"	f	file:
+umem_init	umem.h	/^struct umem_init {$/;"	s
+umem_initialized	umem.c	/^static bool umem_initialized(struct umem *umem)$/;"	f	file:
+umem_ioctl	umem.c	/^static long umem_ioctl(struct file *filp, unsigned int ioctl,$/;"	f	file:
+umem_make_vma_anonymous	umem.c	/^static int umem_make_vma_anonymous(struct umem *umem)$/;"	f	file:
+umem_minor_fault	umem.c	/^static int umem_minor_fault(struct umem *umem,$/;"	f	file:
+umem_mmap	umem.c	/^static int umem_mmap(struct file *filp, struct vm_area_struct *vma)$/;"	f	file:
+umem_open	umem.c	/^static int umem_open(struct inode *inode, struct file *filp)$/;"	f	file:
+umem_page_req_list	umem.c	/^struct umem_page_req_list {$/;"	s	file:
+umem_poll	umem.c	/^static unsigned int umem_poll(struct file* filp, poll_table *wait)$/;"	f	file:
+umem_read	umem.c	/^static ssize_t umem_read(struct file *filp, char __user *buf, size_t count,$/;"	f	file:
+umem_release	umem.c	/^static int umem_release(struct inode *inode, struct file *filp)$/;"	f	file:
+umem_release_fake_vmf	umem.c	/^static void umem_release_fake_vmf(int ret, struct vm_fault *fake_vmf)$/;"	f	file:
+umem_req_pending	umem.c	/^static bool umem_req_pending(struct umem* umem)$/;"	f	file:
+umem_vm_ops	umem.c	/^static const struct vm_operations_struct umem_vm_ops = {$/;"	v	typeref:struct:vm_operations_struct	file:
+umem_vma_close	umem.c	/^static void umem_vma_close(struct vm_area_struct *vma)$/;"	f	file:
+umem_vma_open	umem.c	/^static void umem_vma_open(struct vm_area_struct *vma)$/;"	f	file:
+umem_write	umem.c	/^static ssize_t umem_write(struct file *filp,$/;"	f	file:
+vm_start	umem.c	/^	unsigned long vm_start;$/;"	m	struct:umem	file:
+vma	umem.c	/^	struct vm_area_struct *vma;$/;"	m	struct:umem	typeref:struct:umem::vm_area_struct	file:
+vma_nr	umem.c	/^	unsigned int vma_nr;$/;"	m	struct:umem	file:
