@@ -1,424 +1,284 @@
-<html><head>
-  <meta name="robots" content="noindex,nofollow">
-  <META http-equiv="expires" content="0">
-  <title>CS350 - Operating Systems </title>
-  </head>
+<html>
+<head>
+  <title>Kartik Gopalan, Professor, Computer Science, SUNY Binghamton</title>
+</head>
 
-<body>
 
-<a name=top></a>
-<center>
-<H1> CS350: Operating Systems </H1>
-<H3> Fall 2016</H3>
-</center>
+<body style="background-color: rgb(255, 255, 255);" link="#0000ff" vlink="#0000ff">
 
-<p align="center">
-<a href="#syllabus">[Syllabus]</a> 
-<a href="#slides">[Lectures]</a> 
-<a href="#assignments">[Assignments]</a> 
-<a href="#testsol">[Tests]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/policies.html">[Policies]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/fb.html">[Feedback]</a>
-</p>
-
-<p>
-<table bgcolor="lightgrey" border="0" width="100%">
-  <tbody>
+<table>
     <tr>
-	<td valign="top">
-		<font size="4"><strong><b><a name="syllabus">Syllabus</a></strong></font>
-	</td>
+      <TD> 
+	<img src="images/Gopalan_Kartik.jpg">
+      </td>
+      <TD> 
+	<b>Kartik Gopalan</b>
+	<br>
+	Professor, Computer Science<br>
+	Binghamton University<br>
+	<br>
+	<a href=bio.html>Biosketch</a>,
+<!--	<a href=kartik_gopalan_cv.pdf>CV</a>, -->
+	<a href=http://scholar.google.com/citations?user=gSnisPkAAAAJ&hl=en&oi=ao>Google Scholar</a>.
+	<br>
+	<A href="http://osnet.cs.binghamton.edu/index.html">OSNET Group</A> 
+	<br>
+<!--
+	<A href="http://security.cs.binghamton.edu/index.html">S3 Group</A> 
+	<br>
+-->
+	<a href=http://oscourse.github.io/>CS550</a>
+	<br>
+	<a href=contact.html>Contact Information</a>
+      </td>
     </tr>
-  </tbody>
-</table>
+</TABLE>
 
-<p>
-This course will cover classical and current concepts in Operating Systems.
-Topics include:
-</p>
+<hr>
+
+<b>Prospective Students</b>: 
 <ul>
-<li> Processes and threads
-<li> CPU scheduling
-<li> Memory management
-<li> Concurrency
-<li> File systems
-<li> Input/Output 
-<li> Security 
-<li> Virtualization
-<li> Linux Kernel Programming 
+<li> Please feel free to email me with your resume, GPA, and GRE/SAT scores.
+
+<!--
+<li> U.S. citizens and permanent residents can be considered for <a href=http://www.cs.binghamton.edu/~pyang/gaann/>GAANN Fellowships</a>.
+-->
+
+<li> Undergraduate students can be considered for <a href=http://www.nsf.gov/funding/pgm_summ.jsp?pims_id=5517&org=NSF>NSF Research Experience for Undergraduates</a> (REU) program.
+<!-- <a href=http://www.cs.binghamton.edu/~kartik/sri/>2014 Summer Research Internship in Computer Science</a>. -->
 </ul>
 
-<p>
-<b>Credit hours and course expectations:</b>
-This course is a 4-credit course, which means that students are expected to do at least 12.5 hours of course-related work or activity each week during the semester. This includes scheduled class lecture/discussion meeting times as well as time spent completing assigned readings, studying for tests and examinations, participating in lab sessions, preparing written and programming assignments, and other course-related tasks.
+<hr>
 
-<p>
-<b> <a name=prereqs>Pre-requisites:</a></b>
-
-<ul>
-
-	<li><b>CS220 -- Computer architecture</b> 
-
-	<li><b>CS240: Data Structures and Algorithms</b>
-
-	<li>You must be proficient with C programming.
-
-	<li>Proficiency in the use of a debugger (such as gdb) is expected. You must know how to debug your own code.
-
-	<li>You must be comfortable working and programming in the Linux environment.
-
-</ul>
-
-<b><a name=grading>Evaluation Criteria:</a></b>
-<ul>
-  <li>60% - Three tests.
-	<ul>
-		<li>Test 1: Oct 11, Tue 11:45am-1:05pm. G-7 lab
-		<li>Test 2: Nov 8, Tue 11:45am-1:05pm. G-7 lab
-		<li>Test 3: Dec 14, Wed 8:30am-9:50pm. G-7 Lab  
-		<!-- <a href=http://bannertools.binghamton.edu/exams/>Check here for date and time.</a> -->
-	</ul>
-  <li>40% - Assignments - due every two to three weeks.
-</ul>
-
-<a name=contact></a>
-<p>
-<b>Time and Location:</b> 
-<ul>
-	<li> Lectures: Mon/Wed/Fri 12noon to 1pm, Room SW214
-	<li> Recitation: Tue 11:40am to 1:05pm, Room ENGB G7 Lab
-</ul>
-
-<p>
-<b>Instructor:</b> <a href="http://www.cs.binghamton.edu/~kartik"> Kartik Gopalan</a>, kartik@binghamton.edu<br>
-<b>Office Hours:</b> After class, MWF 1pm-1:30pm, either in/outside classroom, or my office Q-17. Please feel free to stop by at other times, if I am free, or set up an appointment. Email is generally the fastest way to reach me.
-
-<p>
-<b>Teaching Assistant:</b> Spoorti Doddamani, sdoddam1@binghamton.edu <br>
-<b>Office Hours:</b> G-25 ENGB, Tuesday 1:05pm-2:05pm, Thursday 11am-12noon. Please feel free to set up an appointment for other times or email for a faster response.
-
-<p>
-<b><a name=textbooks>Recommended Textbook:</a></b>
-<p>
-
-We will follow material from the following two textbooks. To save money, you DON'T need to buy either of them. However the first book is free online, so it is strongly recommended that you read it as we go along in this course. 
-
+<b>Current Projects:</b>
 <ol>
 
-<li>
-<a href=http://pages.cs.wisc.edu/~remzi/OSTEP/>
-<i>Operating Systems: Three Easy Pieces</i> <br>
+	<li><b><a href=http://www.nsf.gov/awardsearch/showAward?AWD_ID=1527338&HistoricalAwards=false>Multi-Hypervisor Virtual Machines</a></b>
+		<ul>
+		<li><a href=http://osnet.cs.binghamton.edu/publications/williams16enabling.pdf>VEE 2016 paper on Ephemeral Virtualization</a>
+		<li><a href=http://osnet.cs.binghamton.edu/publications/socc16_poster.pdf>SOCC 2016 Poster</a>
+		</ul>
+	<li><b>Virtual Machine Migration:</b>
+	<ul>
+		<li><a href="http://osnet.cs.binghamton.edu/publications/deshpande16agile.pdf">Agile Live Migration</a>
+		<li><a href="http://osnet.cs.binghamton.edu/projects/sg.html">Scatter-Gather Live Migration</a>
+		<li><a href="http://osnet.cs.binghamton.edu/projects/gm.html">Gang Migration</a>
+	</ul>
+	<li><b><a href=http://osnet.cs.binghamton.edu/projects/vmsecurity.html>Virtualization, Privacy, and Security</a></b>
+</ol>        
+
+<b>Other Recent Projects</b>
+        <ol>
+             <li><a href="http://osnet.cs.binghamton.edu/projects/postcopy.html">Post-Copy VM Migration</a></li> 
+             <li><a href="http://osnet.cs.binghamton.edu/projects/xenloop.html">XenLoop</a></li>
+             <li><a href="http://osnet.cs.binghamton.edu/projects/xco.html">XCo</a></li>
+	     <li><a href="http://osnet.cs.binghamton.edu/projects/memx.html">MemX</a>
+             <li><a href="http://osnet.cs.binghamton.edu/projects/mint.html">MiNT-2</a></li> 
+<!--             <li><a href="murals.html">MURALS</a></li> 
+             <li><a href="abp.html">Ad Hoc Bridging Protocol</a></li>
+             <li><a href="dmtp.html">Pull-based Messaging </a></li>
+-->
+        </ol>        
+
+</div>  <!-- end content -->    
+<hr>
+
+<a name=pubs>
+<b>Selected Recent Publications: </b><a href="http://osnet.cs.binghamton.edu/publications/">(Click here for a complete list)</a>
+	(<a href=http://scholar.google.com/citations?user=gSnisPkAAAAJ&hl=en&oi=ao>Google Scholar</a>)
 </a>
-Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau </i> <br>
-Arpaci-Dusseau Books </i> <br>
-March, 2015 (Version 0.90) </i> <br>
-
-<li> <i>Modern Operating Systems</i>, Andrew Tanenbaum, Prentice Hall; 4th edition
-
-</ol>
-
-
-<p>
-<b>Other Recommended Material:</b>
-<ul>
-  	<li> Kernighan, Ritchie, The C Programming Language 
-	<li> Linux Device Drivers, 3rd Edition  by Jonathan Corbet, Alessandro Rubini, and Greg Kroah-Hartman. (This book is also available online at <a href=http://lwn.net/Kernel/LDD3/>http://lwn.net/Kernel/LDD3/</a>).
-	<li> Silberschatz, Galvin, Gagne, Operating System Concepts; 7th or 8th edition
-	<li> Virtual Machines: Versatile Platforms for Systems and Processes, By James E. Smith Jim, Jr. Smith, Ravi Nair.
-	<li> Unix Network programming, Vol 1: The Socket Networking API (3rd edition),  by W. Richard Stevens, Bill Fenner, Andrew M. Rudoff, Addison-Wesley Professional.
-</ul>
-
-<p>
-<a href="#syllabus">[Syllabus]</a> 
-<a href="#slides">[Lectures]</a> 
-<a href="#assignments">[Assignments]</a> 
-<a href="#testsol">[Tests]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/policies.html">[Policies]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/fb.html">[Feedback]</a>
-</p>
-
-<p>
-<table bgcolor="lightgrey" border="0" width="100%">
-  <tbody>
-    <tr>
-	<td valign="top">
-		<font size="4"><strong><a name="slides">Lecture Slides</a></strong></font>
-	</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>
-<font color=red> Please clear your browser's cache and reload this page to see the latest listing of slides below.</a> </font><br>
-
 
 <ol>
+	<li><a href=http://osnet.cs.binghamton.edu/publications/williams16enabling.pdf>
+	Enabling Efficient Hypervisor-as-a-Service Clouds with Ephemeral Virtualization, 
+	</a> VEE 2016.
 
-<li> <a href=slides/overview.pdf target=slides> Introduction </a> 
+	<li><a HREF="http://osnet.cs.binghamton.edu/publications/deshpande16agile.pdf"> 
+	Agile Live Migration of Virtual Machines,
+	</a> IPDPS 2016.
+
+	<li>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/deshpande15scatter.pdf">
+		Scatter-Gather Live Migration of Virtual Machines,
+		</a> In IEEE Transactions on Cloud Computing, September 2015.
+	</li>
+
+	<li>
+		<a href=http://osnet.cs.binghamton.edu/publications/li15privacy.pdf>
+		Privacy-preserving Virtual Machines
+		</a>, ACSAC 2015.
+	</li>
+
+	<li>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/deshpande13gang.pdf">
+		Gang Migration of Virtual Machines using Cluster-wide Deduplication,
+		</a> CCGrid 2013.
+	</li>
+
+	<li>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/gofman11sparc.pdf">
+		SPARC: A Security and Privacy Aware Virtual Machine Checkpointing Mechanism,
+		</a> ACM CCS Workshop on Privacy in the Electronic Society (WPES) 2011, full paper.
+	</li>
+
+	  <li>
+	        <A HREF="http://osnet.cs.binghamton.edu/publications/deshpande11live.pdf">
+		Live Gang Migration of Virtual Machines,
+		</a>
+		HPDC 2011.
+	  </li>
+
+	  <li>
+	        <A HREF="http://osnet.cs.binghamton.edu/publications/deshpande10memx.pdf">
+		MemX: Virtualization of Cluster-wide Memory, 
+		</a>
+		ICPP 2010.
+	  </li>
+
+	  <li> 
+	        <A HREF="http://osnet.cs.binghamton.edu/publications/rajanna10xco_hpdc.pdf">
+		XCo: Explicit Coordination to Prevent Network Fabric Congestion in Cloud Computing Cluster Platforms, 
+		</a>
+		HPDC 2010.
+	  </li>
+
+
+	 <li>
+	  	<a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy_osr.pdf">
+		Post-Copy Live Migration of Virtual Machines,
+		</a> SIGOPS Operating Systems Review, 2009.
+	  </li>
+
+	 <li>
+	  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy.pdf">
+	  Post-Copy Based Live Virtual Machine Migration Using Adaptive Pre-Paging And Dynamic Self-Ballooning,
+	  </a>, VEE 2009.
+	  </li>
+
+	<li>
+	  	<a href="http://osnet.cs.binghamton.edu/publications/wang08xenloop.pdf">
+	  	XenLoop : A Transparent High Performance Inter-VM Network Loopback,
+		</a> 
+		HPDC 2008.
+	  </li>
+
 <!--
-	<ul>
-		<li><a href=notes/overview.pdf>Written Notes from Class Lecture</a>
-	</ul>
+	  <li>
+	    	<A HREF="http://osnet.cs.binghamton.edu/publications/gopalan07load.pdf">
+		Load Balancing Routing of Fault Tolerant QoS-Guaranteed VPNs,
+		</a>
+		IWQoS 2007.
+	  </li>
+
+	  <li>
+	     <A HREF="http://osnet.cs.binghamton.edu/publications/lewandowski07modeling.pdf">
+	  	Modeling device driver effects in real-time schedulability analysis: Study of a network driver,
+		</a>
+		RTAS 2007.
+	  </li>
+
+	  <li>
+	    	<A HREF="http://osnet.cs.binghamton.edu/publications/gopalan04probabilistic_extended.pdf">
+	  	Probabilistic Delay Guarantees Using Delay Distribution Measurement,
+		</a>
+		ACM Multimedia 2004.
+	  </li>
+
+	  <li>
+	    	<A HREF="http://osnet.cs.binghamton.edu/publications/raniwala04centralized.pdf">
+	  	Centralized Channel Assignment and Routing Algorithms for Multi-channel Wireless Mesh Networks,
+		</a>
+		ACM MC2R 2004.
+	  </font></font></li>
+
+	  <li>
+	    <A HREF="http://osnet.cs.binghamton.edu/publications/gopalan04delay.pdf">
+	  	Delay Budget Partitioning to Maximize Network Resource Usage Efficiency,
+		</a>
+		INFOCOM 2004.
+	  </li>
+
+	  <li>
+	    	<A HREF="http://osnet.cs.binghamton.edu/publications/sharma04viking.pdf">
+	  	Viking: A Multi-Spanning-Tree Ethernet Architecture for Metropolitan Area and Cluster Networks,
+		</a>
+		INFOCOM 2004.
+	  </li>
+
+	<li>
+	    <A HREF="http://osnet.cs.binghamton.edu/publications/li03performance.pdf">
+		Performance Guarantee for Cluster-Based Internet Services,
+		</a>
+	    ICDCS 2003.
+	    </li>
+
+	<LI>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/gopalan02multiresource.pdf">
+		Multi-Resource Allocation and Scheduling for Periodic Soft Real-Time Applications,
+		</a>
+		MMCN 2002.
+	</LI>
+
+	<LI>
+	<A HREF="http://osnet.cs.binghamton.edu/publications/sharma02implementation.pdf">
+	Implementation Experiences of Bandwidth Guarantee on a Wireless LAN,
+	</a>
+	MMCN 2002.
+	</LI>
+
+	<LI>
+	<A HREF="http://osnet.cs.binghamton.edu/publications/gopalan02improving.pdf">
+	Improving Route Lookup Performance Using Network Processor Cache,
+	</a>
+	SC 2002.
+	</LI>
 -->
-
-<li> <a href=slides/processes.pdf> Processes </a>
-	<ul>
-		<li> <a href=https://youtu.be/Hu82HSUi5iQ>Recorded Lecture</a>
-		<li> <a href= http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-intro.pdf>Chapter 4</a> and <a href=http://pages.cs.wisc.edu/~remzi/OSTEP/cpu-api.pdf>Chapter 5</a>, OSTEP book.
-		<li> Chapter 2, Tanenbaum's book.
-	</ul>
-
-<li> <a href=slides/ipc.pdf> Inter Process Communication </a>
-	<ul>
-		<li><a href=https://www.dropbox.com/s/r15ynvwitbothn8/ipc_record.m4v?raw=1>Recorded lecture</a> 
-		<li> Recommended references: Unix man pages and Chapters 7 to 10, and 14, Advanced Programming in Unix Environment, by Richard Stevens.
-	</ul>
-
-<li> <a href=slides/os_three_pieces.pdf>OS and Its Three Pieces</a>
-	<ul>
-		<li> Chapter 1 of OSTEP book.
-	</ul>
-
-<li> <a href=slides/cpu_scheduling.pdf> CPU Scheduling </a>
-	<ul>
-		<li> <a href=https://youtu.be/32QAHcDivxQ>Recorded lecture</a> 
-		<li> Section 2.4: Tanenbaum's book
-		<li> Chapter 5: Silberschatz's book
-	</ul>
-
-<li> <a href=slides/virtual_memory_intro.pdf>Virtual Memory Management </a>
-	<ul>
-		<li> <a href=https://youtu.be/rdpwFMr5gC4>Recorded lecture</a> 
-		<li> Chapter 3, Tanenbaum's book
-	</ul>
-
-<li> <a href=slides/page_replacement.pdf> Page Faults and Page Replacement </a>
-	<ul>
-		<li> <a href=https://youtu.be/EVt_Oow42wY>Recorded lecture</a> 
-		<li> Chapter 3, Tanenbaum's book
-<!--
-		<li><a href=notes/page_replacement.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/segmentation.pdf> Segmentation </a>
-	<ul>
-		<li> <a href=https://youtu.be/eOLTiIuYZLE>Recorded Lecture</a>
-		<li> Chapter 3, Tanenbaum's book
-<!--
-		<li> <a href=notes/segmentation_and_practice_question.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/kernel_modules.pdf> Kernel Modules </a>
-	<ul>
-		<li> <a href=http://www.cs.binghamton.edu/~kartik/examples/module>Example Code Kernel Modules</a>
-	</ul>
-
-<li> <a href=slides/threads.pdf> Threads </a>
-	<ul>
-		<li><a href=https://youtu.be/5vB3Kt2aHkM>Recorded Lecture</a>
-		<li> Chapter 2 (Section 2.2), Modern Operating Systems, Andrew Tanenbaum
-		<li> Chapter 11: Advanced Programming in Unix Environment, by Richard Stevens
-	</ul>
-
-<li> <a href=slides/concurrency_race_and_locks.pdf> Concurrency -- Race Conditions and Deadlocks</a>
-	<ul>
-		<li> <a href=https://youtu.be/OcKBHUTs2eA>Recorded Lecture</a>
-		<li> Chapters 2 (2.3)  and 6, Tanenbaum's Modern OS
-<!--
-		<li> <a href=notes/concurrency_locks.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/concurrency_semaphores_pc.pdf> Concurrency -- Semaphores, Condition Variables, and Producer Consumer</a>
-	<ul>
-		<li><a href=https://youtu.be/8JCL-3am0CU>Recorded Lecture</a>
-		<li> Chapters 2 (2.3)  and 6, Tanenbaum's Modern OS
-<!--
-		<li> <a href=notes/concurrency_semaphores_TSL.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li><a href=slides/system_calls.pdf>System Calls</a>
-<li> <a href=slides/file_systems.pdf> File Systems </a>
-	<ul>
-		<li><a href=https://youtu.be/rZyBUE-HlVI>Recorded Lecture</a>
-		<li>Chapter 4: Modern Operating Systems - Andrew Tanenbaum
-	</ul>
-
-<li> <a href=slides/security.pdf> System Security </a>
-	<ul>
-		<a href=https://youtu.be/IsliF-Hn_aY>Recorded Lecture</a>
-		<li> Chapter 9 Tanenbaum's book
-<!--
-		<li> <a href=notes/security_discussion.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/virtual_machine_intro.pdf> Introduction to Virtual Machines </a>
-	<ul>
-		<li><a href=https://youtu.be/UFhe79nYPTE>Recorded Lecture</a>
-		<li> <a name=smith03overview href=slides/smith03overview.pdf>[smith03overview]</a>
-		Chapter 1, "Virtual Machines - Versatile platforms for Systems and Processes", Smith and Nair.
-		<li> Section 8.3 Tanenbaum 3rd Edition
-		<li> Chapter 7 Tanenbaum 4th Edition
-<!--
-		<li> <a href=notes/virtualization_discussion.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/input_output.pdf> Input/Output </a>
-	<ul>
-		<li> <a href= https://youtu.be/Qqt8xe5-HWM>Recorded Lecture</a>
-		<li> Chapter 5, Tanenbaum's book
-<!--
-		<li> <a href=notes/inode_discussion.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/io_models.pdf> I/O Models </a>
-	<ul>
-		<li> <a href=https://youtu.be/SDk6nZ26wKw>Recorded Lecture</a>
-		<li> Chapter 6, Unix Network Programming, 3rd Edition, by Richard Stevens
-<!--
-		<li> <a href=notes/io_models_discussion.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-<li> <a href=slides/raid.pdf> RAID </a>
-	<ul>
-		<li><a href=https://youtu.be/iPVCe77d5I8>Recorded Lecture</a>
-		<li> Chapter 5, Tanenbaum's book
-<!--
-		<li> <a href=notes/raid_write_problem.pdf>Written Notes from Class Lecture</a>
--->
-	</ul>
-
-
-
 </ol>
 
-<p>
-
-<p>
-<a href="#syllabus">[Syllabus]</a> 
-<a href="#slides">[Lectures]</a> 
-<a href="#assignments">[Assignments]</a> 
-<a href="#testsol">[Tests]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/policies.html">[Policies]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/fb.html">[Feedback]</a>
-</p>
-
-<p>
-<table bgcolor="lightgrey" border="0" width="100%">
-  <tbody>
-    <tr>
-	<td valign="top">
-		<font size="4"><strong><b><a name="assignments">Assignments and Labs</a></strong></font>
-	</td>
-    </tr>
-  </tbody>
-</table>
-
+<hr>
+<b>Recent professional service:</b>
+<ul>
+	<li>TPC of ICDCS 2017
+	<li>TPC of IPDPS 2017
+	<li>TPC of IEEE Cluster 2017
 <!--
-<ul>
-	<li> <a href=lab_slides/network_boot_image.pdf>Network Boot Instructions</a>
-        <li> <a href=lab_slides/kernel_compilation.html>Kernel Compilation</a>
-
-
-
-</ul>
+	<li>TPC of <a href=http://www.comsnets.org/index.html>COMSNETS 2016</a>
+	<li>TPC of <a href=http://icpp2016.cs.wcupa.edu>ICPP 2016</a>
+	<li>TPC of <a href=http://www.buyya.com/ccgrid/>CCGrid 2015</a></li>
+	<li>TPC of <a href=http://conferences.computer.org/IC2E/2015/>IC2E 2015</a></li>
+	<li>TPC of <a href=http://2015.ndm-meeting.org/>Network-aware Data Management (NDM) Workshop 2015</a>
+	<li>TPC of <a href=http://www.scienceengineeringacademy.org/99997/>Cyber Security 2015</a></li>
+	<li>TPC of <a href=http://www.hpdc.org/2014/>HPDC 2014</a></li>
+	<li>TPC of <a href=http://2014.cloudcom.org>CloudCom 2014</a></li>
+	<li>TPC of <a href=http://www.icpads.org>ICPADS 2014</a></li>
+	<li>TPC of <a href=http://www.ieeebigdata.org/2014/>IEEE BigData 2014</a></li>
+	<li>TPC and  Steering Committee of <a href=http://www.grid-appliance.org/wiki/index.php/VTDC13>VTDC 2013</a></li>
+	<li>TPC of <a href=http://cipsijoomla.ux.uis.no/>CloudCom 2013</a></li>
+	<li>TPC of <a href=http://www.pds.ewi.tudelft.nl/ccgrid2013/>CCGrid 2013</a></li>
+	<li>TPC of <a href=http://cci.drexel.edu/bigdata/bigdata2013/>IEEE BigData 2013</a></li> 
+	<li>TPC of <a href=http://icpp2013.ens-lyon.fr/>ICPP 2013</a></li>
+	<li>TPC of <a href=http://aces.snu.ac.kr/icpads13/Home.html>ICPADS 2013</a></li> 
 -->
-
-<ul>
-
-<li> <a href=lab_slides/recursion_pointers_makefiles.pdf>Lab on Recursion, Pointers, and Makefiles</a>
-<li> <a href=lab_slides/fork_wait_exec_09_06_2016.pdf>Lab on fork(), wait(), exec()</a>
-<li> <a href=lab_slides/gdb.pdf>Lab on GDB</a>
-<li> <a href=lab_slides/pipe_open_close_dup.pdf>Lab on Pipes, Open, Close, Dup</a>
-<li> <a href=lab_slides/CS350_dup2_09_27_2016.pdf>Lab on Dup, Pipes</a>
-<li> <a href=lab_slides/CS350_dup2_10_05_2016.pdf>Lab on Dup</a>
-<li> <a href=lab_slides/network_boot_image.pdf>Network boot image</a>
-	<ul>
-		<li> <a href=http://www.linuxdevcenter.com/2007/07/05/examples/hello_dev.c>Example "hello world" device driver</a>
-	</ul>
-<li> <a href=kernel_compilation.html>Kernel Compilation</a>
-<li> <a href=lab_slides/system_call_lab_slides.pdf>System Call</a>
-<li> <a href=threads_and_semaphores>Threads and Semaphores</a>
-	
-<li> <a href=hw1.html>Assignment 1</a>, Due: September 16 <a href=sol1.c>Solution</a>
-<li> <a href=hw2.html>Assignment 2</a>, Due: October 8.
-<li> <a href=hw3.html>Assignment 3</a>, Due: November 11.
-<li> <a href=hw4.html>Assignment 4</a>, Due: Dec 9.
-<font color=red><a href=http://www.cs.binghamton.edu/~kartik/linux_new.tar.gz>Pre-compiled Linux source code</a>(Warning: 1GB file. May take a while to download from off-campus)</font>
-
 </ul>
 
 
-<p>
-<b> Assignment Submission Instructions:</b>
-Submit your assignment on the blackboard as one tar-gzipped file (generated using the <i>tar</i> command with <i>cvzf</i> options as firstname_lastname_assignment1.tar).
-In the tar-gzipped file, include all your code, a README file, and a Makefile.
-If you do not know how to do this, please contact us for help.
-DO NOT submit each file individually.
-DO NOT include the entire linux kernel (for kernel programming assignments) -- include only the files you change.
-DO NOT include object files (.o) or any executable files.
-<p>
+<!-- Start of StatCounter Code for Default Guide 
+<script type="text/javascript">
+var sc_project=10687967; 
+var sc_invisible=1; 
+var sc_security="1d53d9ca"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web stats"
+href="http://statcounter.com/free-web-stats/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/10687967/0/1d53d9ca/1/"
+alt="web stats"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
 
-
-<p>
-<a href="#syllabus">[Syllabus]</a> 
-<a href="#slides">[Lectures]</a> 
-<a href="#assignments">[Assignments]</a> 
-<a href="#testsol">[Tests]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/policies.html">[Policies]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/fb.html">[Feedback]</a>
-</p>
-
-
-<p>
-<table bgcolor="lightgrey" border="0" width="100%">
-  <tbody>
-    <tr>
-	<td valign="top">
-		<font size="4"><strong><b><a name="testsol">Tests and Solutions</a></strong></font>
-	</td>
-    </tr>
-  </tbody>
-</table>
-
-<ul>
-
-<li> <a href=test/diagnostic_test_solution.pdf> Diagnostic Test Solution </a>
-<li> <a href=test/test1_samples.pdf>Test 1 Sample Questions</a>
-<li> <a href=exam_instructions.pdf>Instructions for Midterm 1</a>
-<li> <a href=test/test1_solution.pdf> Test 1 Solution </a>
-<li> <a href=test/test2_samples.pdf>Test 2 Sample Questions</a>
-
-
-<li> <a href=test/test2_solution.pdf> Test 2 Solution </a>
-
-<li> <a href=test/test3_sample.pdf>Test 3 Sample Questions</a>
-
-<li> <a href=test/test3_solution.pdf> Test 3 Solution </a>
-
-<!--
-<li> <a href=test/test4_samples.pdf>Test 4 Sample Questions</a>
-
-<li> <a href=test/test4_solution.pdf> Test 4 Solution </a>
--->
-
-</ul>
-
-
-<p>
-<a href="#syllabus">[Syllabus]</a> 
-<a href="#slides">[Lectures]</a> 
-<a href="#assignments">[Assignments]</a> 
-<a href="#testsol">[Tests]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/policies.html">[Policies]</a> 
-<a href="http://www.cs.binghamton.edu/~kartik/fb.html">[Feedback    ]</a>
-</p>
 
 </body></html>
