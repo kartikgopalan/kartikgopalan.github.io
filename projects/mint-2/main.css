@@ -1,0 +1,97 @@
+/* CSS Document */
+
+/* Navigation
+================================================*/
+
+/* "Lucida Grande" is for macs, "Lucida Sans Unicode" is for PCs */
+
+body {
+	font-family: Verdana, Geneva, Lucida, sans-serif;
+	font-size: 13px;
+	line-height: 1.4em;
+	color: #333;
+	background: #fff;
+	text-align: center;		/* so IE can center divs */
+	}
+
+#nav {	  
+	font-size: 12px;
+	font-family: arial,"Lucida Grande", "Lucida Sans Unicode", Verdana, Geneva, Lucida, sans-serif;
+	font-weight: normal;
+	text-align: center;
+	min-height: 24px;
+	}
+
+*html #nav {
+    height: 1px;
+
+    }
+
+#nav a {
+	float: left;
+	display: inline;	
+	width: 107px;
+	padding: 3px 0 2px 0;
+/*	background: #f7f7f7; */
+	background: lightgray; 
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	border-right: none;
+
+	}  
+
+
+#nav a:hover {
+	color: #933;
+	background: #ececec;
+	}
+
+#nav a.active:link, 
+#nav a.active:visited, #nav a.active:hover {
+	color: #933;
+	background: #ececec;
+
+	}
+
+#nav a#first {
+	margin-left: 0px;
+	}
+	
+#nav a#last {
+	border-right: 1px solid #ccc;
+	}	
+	
+	#sidebar {
+	left: 0px;
+	top: 55px;
+	width: 190px;
+	padding-right: 5px;
+	border-right: 1px solid #bbb;
+	height: 30em;
+	text-align: left;
+	}
+.box {
+	float: left;
+	display: inline;
+	padding-left: 0px;
+	margin-bottom: 10px;
+	line-height:40px;
+	list-style-type:none;
+	}
+	a {outline: none;}
+
+a:link, a:visited {
+	color: #0577c1;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #0577c1;
+	text-decoration: underline;
+}
+	
+a:hover, li.current a:link, li.current a:visited {
+	color: #993333;
+	text-decoration: underline;
+	}

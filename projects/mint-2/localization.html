@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height:25px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div align="center"><table width="779" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><h2 align="left" class="style3">Operating Systems and Networks Lab (OSNET) <br />
+          Mint-2 Project </h2></td>
+        <td><img src="256px-Mint.png" alt="" width="256" height="94" border="0" align="right" /></td>
+      </tr>
+    </table></td>
+  </tr>
+   <!-- <tr>
+    <td id="nav" ><a href="">OSNET HOME </a> <a href="">PEOPLE</a> <a href="">PUBLICATIONS</a> <a href="">PROJECTS</a> <a href="">COURSES</a> <a href="">INTERNAL</a> <a href="">SUPPORT</a> </td>
+  </tr> -->
+  <tr>
+    <td ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" style="margin-top:0px;" width=200><p>&nbsp;</p>
+		<div id="sidebar">
+		  <div class="box">
+            <ul  style="list-style-type:none;">
+              <li><a href="index.html">About</a></li>
+              <li><a href="newnode.html">Build A Node</a></li>
+              <li><a href="softwaresetup.html">Setup Node Software</a> </li>
+              <li><a href="localization.html">Localization</a> </li>
+              <li><a href="user_interface.html">User Interface</a> </li>
+              <li><a href="fault_injection.html">Fault Injection</a> </li>
+              <li><a href="publications.html">Publications</a> </li>
+            </ul>
+		    </div>
+		</div></td>
+        <td ><h1 class="style3">&nbsp;</h1>
+          <h1 class="style3" style="margin-left:20px;" >Mint-2 Localization</h1>
+          <p style="margin-left:20px;">&nbsp;</p>
+<p style="margin-left:20px;">        The iRobot Create has two built-in sensors to track the
+robot's movement. These sensors can be queried via the serial
+interface, and return both distance traveled by the robot since
+the last query (in mm) and angle the robot has rotated through
+since the last query (in degrees). However, the accumulated
+sensor measurements may grow inaccurate due to rounding
+errors, wheel slippage, and encoder inaccuracy, over time.
+In addition, a node may be manually picked up and moved
+to a new location. Thus, we used an RFID based system to
+periodically re-calibrate the node's position and orientation in     
+the testbed space.
+
+<br /><br />
+An array of fixed RFID tags deployed on the floor of the
+testbed allows each robot to determine its absolute location
+with an uncertainty equal to the maximum tag-sensing radius
+of the RFID reader (2.25cm). When a robot crosses an RFID
+tag, the tag value is used to determine the node's absolute
+(x, y) position within the testbed.
+
+<br/><br/>
+
+The heart of the localization algorithm is a section of code
+running periodically every 50ms that is in charge of acquisition
+and processing of data from movement sensors and the RFID
+reader. The following presents a more structured view of the
+localization algorithm. </p>
+<p align=center>
+<img align=center src="loc_algo.jpg" height=600 />
+</p>
+<p style="margin-left:20px;">
+Every time the localization tick runs,
+it reads the delta change in distance and orientation since the
+last sensor access, adds the changes to the last known position
+and orientation respectively, and clears the sensors. In addition,
+more precise position and orientation calibration is performed
+when passing over RFID tags to remove accumulated error
+from the Create’s sensors feedback. Once at least two tags
+have been read, the node can determine its orientation from
+the coordinates of each tag (say (x1, y1) and (x2, y2)) as:
+
+</p>
+<p align=center>
+<img align=center src="formula.jpg"/>
+</p>
+<p style="margin-left:20px;">
+
+    If the node travels in a straight line, then <img src="deltaRFID.jpg"/> is 0.
+  However, if it traveled in a constant-radius arc, its deviation
+from the straight line path between the two tags is equal in
+magnitude at both the tags. Thus the effective change in angle,
+<img src="deltaRFID.jpg"/>/2 is added to the net angle. 
+The following image elaborates more
+the robot's orientation calculation for the constant-radius arc
+movement.
+
+</p>
+<p align=center>
+<img align=center src="angle.jpg" width=350 />
+</p>
+<p style="margin-left:20px;">
+
+   In order to account for the situations, where researchers
+or testbed operators manually drop the robot anywhere in
+the testbed area, the robots are programmed to initialize
+themselves with correct coordinates and orientation informa-
+tion. The position initialization process is only considered
+successful if the node reads two RFID tags over a straight
+line movement.
+
+
+</p>
+	</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

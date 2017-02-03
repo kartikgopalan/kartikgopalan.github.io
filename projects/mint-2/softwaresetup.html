@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height:25px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div align="center"><table width="779" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><h2 align="left" class="style3">Operating Systems and Networks Lab (OSNET) <br />
+          Mint-2 Project </h2></td>
+        <td><img src="256px-Mint.png" alt="" width="256" height="94" border="0" align="right" /></td>
+      </tr>
+    </table></td>
+  </tr>
+   <!-- <tr>
+    <td id="nav" ><a href="">OSNET HOME </a> <a href="">PEOPLE</a> <a href="">PUBLICATIONS</a> <a href="">PROJECTS</a> <a href="">COURSES</a> <a href="">INTERNAL</a> <a href="">SUPPORT</a> </td>
+  </tr> -->
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" style="margin-top:0px;"><p>&nbsp;</p>
+		<div id="sidebar">
+		  <div class="box">
+            <ul  style="list-style-type:none;">
+              <li><a href="index.html">About</a></li>
+              <li><a href="newnode.html">Build A Node</a></li>
+              <li><a href="softwaresetup.html">Setup Node Software</a> </li>
+              <li><a href="localization.html">Localization</a> </li>
+              <li><a href="user_interface.html">User Interface</a> </li>
+              <li><a href="fault_injection.html">Fault Injection</a> </li>
+              <li><a href="publications.html">Publications</a> </li>
+            </ul>
+		    </div>
+		</div></td>
+        <td ><table id="toc">
+          <tbody>
+            <tr>
+              <td><div id="toctitle">
+                <h2 class="style3">Contents</h2>
+                 </div>
+                  <ul>
+                    <li>Installing Linux From Existing MiNT Node</li>
+                    <li>Installing Linux From Scratch
+                        <ul>
+                          <li>Install Voyage Linux on a CF Card</li>
+                          <li>Boot the net5501</li>
+                          <li>Compiling Linux 2.6.30 Kernel</li>
+                          <li>Compiling Madwifi Driver for PCI Wireless Card</li>
+                          <li>Compiling TP-Link TL-WN321G G 54M Wireless USB Adapter Device Driver for Linux Kernel 2.6.30</li>
+                          <li>Configure Network Interfaces</li>
+                          <li>Install Packages</li>
+                          <li>Install NS2</li>
+                        </ul>
+                    </li>
+                    <li>Installing MiNT Software</li>
+                  </ul></td>
+            </tr>
+          </tbody>
+        </table>
+          <h2 class="style3"><span id="Installing_Linux_From_Existing_MiNT_Node">Installing Linux From Existing MiNT Node</span></h2>
+          <p>Begin with an image of an existing MiNT node. For all of these instructions, /dev/sdb is the CF card reader. This may be different in your machine; make?<strong>sure</strong>?you have it right, otherwise your hard drive may be overwritten.</p>
+          <dd><em><strong>dd if=/dev/sdb of=cfimage2gb </strong></em></dd>
+          <p>When this completes, it should show 2GB transferred. Now remove the CF card from the existing node and insert a new, blank CF card. Perform the following step:</p>
+          <dd><em><strong>dd if=cfimage2gb of=/dev/sdb  </strong></em></dd>
+          <p>You'll want to edit a few details before putting the card in the robot, so first mount it:</p>
+          <dd><em><strong>mkdir tempmnt  mount -t ext2 -o loop /dev/sdb1 tempmnt  </strong></em></dd>
+          <p>There are two files you will need to edit; begin with /etc/hostname. Change the name to mintN, where N is the cardinality of the node. Next edit /etc/network/interfaces, changing the address entry under ath0 to 192.168.1.(100+N), where N is the cardinality of the node once again. Now unmount it:</p>
+          <dd><em><strong>umount /dev/sdb1  </strong></em></dd>
+          <p>Finally, set the boot flag:</p>
+          <dd><em><strong>fdisk /dev/sdb  </strong></em></dd>
+          <p>Type a (toggle boot flag), 1 (partition 1), w (write changes). When it finishes, you may remove the now-prepared CF card.</p>
+          <h2 class="style3"><span id="Installing_Linux_From_Scratch">Installing Linux From Scratch</span></h2>
+          <p>When we were trying to install Linux on the PowerPC-based RouterBoard RB600A, I was stuck trying to consult the following very conflicting and only slightly-applicable documentation:</p>
+          <ul>
+            <li><a href="http://wiki.mikrotik.com/wiki/RB500_Linux_SDK#Making_Debian_installer" rel="nofollow">RB500 Linux SDK</a></li>
+            <li><a href="http://www.me2000.net/index.php/Linux_on_a_Routerboard_from_Scratch" rel="nofollow">Linux on a Routerboard from Scratch</a></li>
+            <li><a href="http://artax.karlin.mff.cuni.cz/~zajio1am/texts/debian_sarge_on_rb532.html" rel="nofollow">Installation of Debian Sarge on Routerboard 532</a></li>
+            <li>Forum query:<a href="http://forum.routerboard.com/viewtopic.php?f=10&amp;t=3857" rel="nofollow">http://forum.routerboard.com/viewtopic.php?f=10&amp;t=3857</a></li>
+          </ul>
+          <p>However, now that we have moved to the x86-based net5501 board from Soekris Engineering, the process of installing and configuring Linux for the robot is simplified significantly. The main steps to install Linux can be outlined as the following steps:</p>
+          <ol>
+            <li>Format a 2GB Compact Flash card, then download and install Voyage Linux on the card using a Linux computer</li>
+            <li>Boot the net5501 with the CF card; it should automatically recognize the GRUB bootloader</li>
+            <li>Configure network interfaces, preferably eth0 and wifi0 (the miniPCI card on the board itself)</li>
+            <li>Get the 2 significant MAC addresses registered for the network so the following steps can be performed:</li>
+            <li>Modify /etc/apt/sources.list, then install build-essential, automake, and autoconf</li>
+            <li>Make the /home/mint directory, and follow the <a href="http://nsnam.isi.edu/nsnam/index.php/Downloading_and_installing_ns-2" rel="nofollow">NS2 Installation Guide</a></li>
+          </ol>
+          <h3><span id="Install_Voyage_Linux_on_a_CF_Card">Install Voyage Linux on a CF Card</span></h3>
+          <p>Due to the capacity of the 2G CF card, we need to use 8G CF card instead. To set up the Linux on a 8G CF card, we firstly download Voyage Linux source 0.7.0 from <a href="http://mirror.voyage.hk/download/voyage/voyage-0.7.0.tar.bz2" rel="nofollow">http://mirror.voyage.hk/download/voyage/voyage-0.7.0.tar.bz2</a></p>
+          <p>After that, we untar the source tar file and follow <strong><em>[Voyage Linux Root]</em>/README</strong> file to create the image.</p>
+          <p><strong>Notice</strong>: The Voyage Linux installation process will copy all the files preserving the permissions. Therefore, you need to untar the source file using root account. Otherwise, your image won't boot up correctly.</p>
+          <h3><span id="Boot_the_net5501">Boot the net5501</span></h3>
+          <p>You won't have problem booting up the Voyage Linux 0.7.0</p>
+          <h3><span id="Compiling_Linux_2.6.30_Kernel">Compiling Linux 2.6.30 Kernel</span></h3>
+          <p>Since we have source code compiled under 2.6.30 Linux kernel, we do not want to spend extra time on compiling them using the current Voyage Linux 0.7.0. We download the Linux kernel 2.6.30 from<a href="http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.30.tar.gz" rel="nofollow">http://www.kernel.org/pub/linux/kernel/v2.6/linux-2.6.30.tar.gz</a></p>
+          <p>We used <strong><em>[Voyage Linux Root]</em>/boot/config-2.6.32-voyage</strong> as a reference to compile our customized 2.6.30 kernel.</p>
+          <h3><span id="Compiling_Madwifi_Driver_for_PCI_Wireless_Card">Compiling Madwifi Driver for PCI Wireless Card</span></h3>
+          <p>We compiled madwifi-0.9.4-r4136-20110203 as our PCI wireless card driver.</p>
+          <h3><span id="Compiling_TP-Link_TL-WN321G_G_54M_Wireless_USB_Adapter_Device_Driver_for_Linux_Kernel_2.6.30">Compiling TP-Link TL-WN321G G 54M Wireless USB Adapter Device Driver for Linux Kernel 2.6.30</span></h3>
+          <p>Currently, we are using TP-Link TL-WN321G adapter.</p>
+          <p>1. Download RT3070USB(RT307x) driver <a href="http://www.sendspace.com/file/xfk1tg" rel="nofollow">2009_0525_RT3070_Linux_STA_v2.1.1.0.bz2</a></p>
+          <p>2. Connect device and check WLAN USB hardware ID to be 2070/3070/2870 or other</p>
+          <dd><em><strong>root@mint3:/home/mint# lsusb<br>
+Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub  <br>
+Bus 001 Device 002: ID 148f:2070 Ralink Technology, Corp. <br>
+RT2070 Wireless Adapter  Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub          </strong></em></dd>
+          <p>You can see something like this: <strong>148f:2070</strong> see WLAN USB hardware ID and disconnect it from usb</p>
+          <p>3. Extract archive file in step 1 by any archive manager or use this code</p>
+          <dd><em><strong>$sudo su  <br>#tar jxvf 2009_0525_RT3070_Linux_STA_v2.1.1.0.bz2</strong></em></dd>
+          <p>4. ADD Device ID to Source File File located 2009_0525_RT3070_Linux_STA_v2.1.1.0/os/linux/usb_main_dev.c under section #ifdef RT3070 using any text editor</p>
+          <dd><em><strong>{USB_DEVICE(0x148F,0x2070)}, /*your comment Ralink 2070 */          </strong></em></dd>
+          <p>you can add your own USB wireless hardware ID by changing 148f and 2070 to any other number get from step 2.</p>
+          <p>5. Compile source code</p>
+          <dd><em><strong>$sudo make  <br>
+          $sudo make install          </strong></em></dd>
+          <p>6. Some Manual File Copying Copy the .DAT file to /etc/Wireless. using following code.(the install script should do it but just in case). Also copy the rt2870.bin file to /lib/firmware.</p>
+          <dd><em><strong>$sudo mkdir -p /etc/Wireless/RT2870STA  <br />$sudo cp RT2870STA.dat /etc/Wireless/RT2870STA/  <br />$sudo apt-get install tofrodos  $sudo apt-get install dos2unix  <br />$sudo dos2unix /etc/Wireless/RT2870STA/RT2870STA.dat <br /> $sudo chmod +x /etc/Wireless/RT2870STA/RT2870STA.dat  <br />$sudo cp common/rt2870.bin /lib/firmware/          </strong></em></dd>
+          <p>7. Start The Module</p>
+          <dd><em><strong>$sudo modprobe rt3070sta          </strong></em></dd>
+          <p>If you add this to /etc/rc.local in your node, it will always insert the module when starts</p>
+          <h3><span id="Configure_Network_Interfaces">Configure Network Interfaces</span></h3>
+          <p>To use the Atheros 5212-based cards correctly, interfaces ath0 through ath3 must be created from wifi0 through wifi3 at boot time. A small script must be created to do this. If necessary, remountrw, then make a directory called /home/mint/scripts, and place the following in startup.sh:</p>
+          <dd><em><strong>#!/bin/sh  wlanconfig ath0 create wlandev wifi0 wlanmode sta  wlanconfig ath1 create wlandev wifi1 wlanmode sta  wlanconfig ath2 create wlandev wifi2 wlanmode sta  wlanconfig ath3 create wlandev wifi3 wlanmode sta  ifdown ath0  ifup ath0  iwconfig ath0 OpenWRT          </strong></em></dd>
+          <p>The first line specifies the interpreter, the next four lines create ath0 through ath3, and the final line enables ath0 for controlling the robot. To make it executable:</p>
+          <dd><em><strong>chmod +x /home/mint/scripts/startup.sh          </strong></em></dd>
+          <p>Now, you'll want to enable starting this on runlevel 2, the default runlevel for multi-user mode. Still remounted as read/write, vi /etc/inittab, scroll to the bottom, and add these two lines:</p>
+          <dd><em><strong>#Configure ath0 through ath3 on boot [Christopher]  1:2:once:/home/mint/scripts/startup.sh          </strong></em></dd>
+          <p>This means that startup.sh will run once on entering runlevel 2. The final step for network setup will be to modify /etc/network/interfaces as follows. First, comment out the lines related to eth0, and then add these lines:</p>
+          auto ath0  iface ath0 inet static       wireless-essid OepnWRT       address 192.168.1.101   #101 is node 1, 102 node 2, etc       netmask 255.255.255.0       broadcast 192.168.1.255       gateway 192.168.1.1  
+          <p><strong>UPDATE:</strong></p>
+          <p>When you boots up, you can setup the USB adapter interface?<strong>ra0</strong>?using the following scripts:</p>
+          <dd><em><strong>#!/bin/bash control_interface=linksysctrl  echo &quot;setup control interface ra0... ${control_interface}&quot;  ifconfig ra0 up  iwconfig ra0 essid &quot;${control_interface}&quot;  dhclient ra0 </strong></em></dd>
+          <p>We have a managed wireless network called?<strong>syslinkctrl</strong>?as the control interface for all the nodes, which, for each node, is the interface?<strong>ra0</strong>. We also have script to setup the experiment wireless Ad-Hoc network?<strong>linksys</strong>?interface ath0 which we created from wifi0 interface.</p>
+          <dd><em><strong>#!/bin/sh  wlanconfig ath0 create wlandev wifi0 wlanmode sta          </strong></em></dd>
+          <h3><span id="Install_Packages">Install Packages</span></h3>
+          <p>Begin by editing /etc/apt/sources.list to add the following line:</p>
+          <dd><em><strong>#deb <a href="http://debian.cs.binghamton.edu/debian" rel="nofollow">http://debian.cs.binghamton.edu/debian</a> etch main          </strong></em></dd>
+          <p>You'll want to enable eth0 here to use apt-get, and disable it again when you finish.</p>
+          <dd><em><strong>apt-get install build-essential autoconf automake  
+          apt-get install tcl8.4 tcl8.4-dev tk8.4 tk8.4-dev stow          </strong></em></dd>
+          <h3><span id="Install_NS2">Install NS2</span></h3>
+          <dd><em><strong>mkdir /home/mint  cd /home/mint  wget <a href="http://internap.dl.sourceforge.net/sourceforge/nsnam/ns-allinone-2.33.tar.gz" rel="nofollow">http://internap.dl.sourceforge.net/sourceforge/nsnam/ns-allinone-2.33.tar.gz</a>  tar -xzf ns-allinone-2.33.tar.gz   cd ns-allinone-2.33  <br>./install  export PATH=$PATH:/home/mint/ns-allinone-2.33/bin:/home/mint/ns-allinone-2.33/tcl8.4.18/unix:/home/mint/ns-allinone-2.33/tk8.4.18/unix  cd ns-2.33/  <br>./validate</strong></em></dd>  
+          <p>If the validate command looks like it's working correctly, you can terminate it prematurely, as it takes hours to complete.</p>
+          <p>Note that the tcl/tk version may be different for you, and that even ns-allinone may be at a later version. Verify that you are getting the latest versions of all software packages.</p>
+          <h2>&nbsp;</h2>
+          <h1 class="style3">&nbsp;</h1>
+          <h1 class="style3" style="margin-left:20px;" >&nbsp;</h1>
+          <p style="margin-left:20px;">&nbsp;</p></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

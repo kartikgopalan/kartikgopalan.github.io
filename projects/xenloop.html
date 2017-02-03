@@ -1,0 +1,229 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - XenLoop</title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>
+XenLoop : A Transparent Inter-VM Network Loopback Channel
+</h1>
+
+<p>
+Advances in virtualization
+technology have focused mainly
+on strengthening the isolation barrier
+between  virtual machines (VMs) that
+are co-resident within a single
+physical machine.
+At the same time, there exist a large category of
+communication intensive distributed
+applications and software components, such as 
+web services, high
+performance grid applications, transaction
+processing, and graphics rendering,
+that often wish to communicate
+across this isolation barrier with
+other endpoints on co-resident VMs.
+State of the art inter-VM communication
+mechanisms do not adequately address the
+requirements of such applications.
+TCP/UDP based network
+communication tends to perform
+poorly when used between co-resident VMs,
+but has the advantage of being
+transparent to user applications.
+Other solutions exploit
+inter-domain shared memory mechanisms
+to improve communication latency and
+bandwidth, but require applications
+or user libraries to be rewritten against
+customized APIs -- something not
+practical for a large majority of
+distributed applications.
+In this project, we have developed
+a fully transparent and high performance inter-VM
+network loopback channel, called <b><i>XenLoop</i></b>,
+in the Xen virtual machine environment.
+XenLoop does not sacrifice either user or kernel-level 
+transparency and yet achieves high communication 
+performance between co-resident guest VMs.
+XenLoop intercepts outgoing network packets 
+and sheperds the packets destined to
+co-resident VMs through a high-speed inter-VM
+shared memory channel that bypasses the
+virtualized network interface.
+Guest VMs using XenLoop can migrate transparently across
+machines without disrupting ongoing
+network communications, and seamlessly switch
+between the standard network path and the XenLoop channel.
+In evaluation using a number of unmodified benchmarks,
+we observe that XenLoop can reduce the inter-VM round trip
+latency by up to a factor of 5 and
+increase bandwidth by up to a factor of 6.
+</p>
+
+<h2> Publications </h2>
+<ol>
+	<li>
+		Jian Wang, Kwame-Lante Wright, and Kartik Gopalan,
+		<b><i>XenLoop : A Transparent High Performance Inter-VM Network Loopback</i></b>,
+		In the Journal of Cluster Computing -- Special Issue on HPDC, Volume 12, Number 2, pages 141--152, 2009.
+		<a href="/publications/wang09xenloop.pdf">[pdf]</a>
+		<a href="/publications/wang09xenloop.bib">[bibtex]</a>
+	</li>
+
+	<li>
+		Jian Wang, Kwame-Lante Wright, and Kartik Gopalan,
+		<b><i>XenLoop : A Transparent High Performance Inter-VM Network Loopback</i></b>,
+		In the International Symposium on High Performance Distributed Computing (HPDC), Boston, MA, June 2008.
+		<A HREF="/publications/wang08xenloop.pdf">[pdf]</A>
+		<A HREF="/publications/wang08xenloop.bib">[bibtex]</A>
+	</li>
+</ol>
+
+<h2> Download XenLoop Code </h2>
+The XenLoop code is available for download
+(although its no longer maintained).
+<br>
+<!--
+<br>
+For Xen-3.1.0 <a href=/projects/xenloop-1.2.tgz>[xenloop-1.2.tgz]</a>
+<a href=/projects/README.1.2.xenloop.txt>[README-1.2]</a>
+<br>
+-->
+For Xen-3.2.0 <a href=/projects/xenloop-2.0.tgz>[xenloop-2.0.tgz]</a>
+<a href=/projects/README.2.0.xenloop.txt>[README-2.0]</a>
+<br>
+<br>
+
+<h2> Frequently Asked Questions </h2>
+Q: Does XenLoop work with "routed" mode networking configuration?
+<br> 
+Ans:
+<pre>
+	Likely not yet. We've tested it only in "bridged" mode.
+	Routed mode might need some more code changes. 
+	Suggestions welcome!
+</pre>
+
+Q: I get the following error on Xen 3.1
+<pre>
+ERROR xf_connect: line 198: HYPERVISOR_grant_table_op failed ret = -1 status = 0
+ERROR: Exiting xf_connect
+ERROR xf_connect: line 198: HYPERVISOR_grant_table_op failed ret = -1 status = 0
+ERROR: Exiting xf_connect
+</pre>
+Ans:
+<pre>
+	By default, 3.1 doesn't seem to allow two unprivileged domains to
+	share memory (for some obscure reasons).
+	I understand this had apparently been fixed, but
+	they left some unnecessary permission checks in
+	xen/common/grant_table.c in the xen hypervisor.
+	Edit this file and comment out all the occurences of
+	the following lines
+
+	       if ( unlikely(!grant_operation_permitted(d)) )
+		   goto out;
+
+	mostly in do_grant_op function
+
+	Then recompile and reinstall the xen hypervisor (recompiling the
+	guest is not necessary)
+
+	These changes are not needed from Xen 3.2 onwards.
+</pre>
+
+Q: If i try to rmmod xenloop, I see lots of 
+<pre>
+   "WARNING: g.e. still in use!" 
+</pre>
+ messages on the guest domain with lower Xen domain ID.
+<br> <br>
+Ans:
+<pre>
+	Yes, this is an annoying, but benign, warning message. It happens 
+	if the listener end of XenLoop (with lower domid) revokes page grants 
+	before the connector end disconnects. It seems to be benign as long
+	as both endpoints dissociate from each other. We haven't yet found a 
+	perfectly clean way to synchronize the two endpoints so that connector 
+	disconnects before listener revokes. We believe you can ignore 
+	these messages for now.
+</pre>
+
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+<!-- Start -->
+<script type="text/javascript">
+var sc_project=3418969; 
+var sc_invisible=1; 
+var sc_partition=38; 
+var sc_security="f1df1d45"; 
+</script>
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a href="http://www.statcounter.com/" target="_blank"><img class="statcounter" src="http://c39.statcounter.com/3418969/0/f1df1d45/1/" alt="website stats" ></a></div></noscript>
+<!-- End -->
+
+</body>
+</html>

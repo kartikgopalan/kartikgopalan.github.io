@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height:25px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div align="center"><table width="779" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><h2 align="left" class="style3">Operating Systems and Networks Lab (OSNET) <br />
+          Mint-2 Project </h2></td>
+        <td><img src="256px-Mint.png" alt="" width="256" height="94" border="0" align="right" /></td>
+      </tr>
+    </table></td>
+  </tr>
+   <!-- <tr>
+    <td id="nav" ><a href="">OSNET HOME </a> <a href="">PEOPLE</a> <a href="">PUBLICATIONS</a> <a href="">PROJECTS</a> <a href="">COURSES</a> <a href="">INTERNAL</a> <a href="">SUPPORT</a> </td>
+  </tr> -->
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" style="margin-top:0px;"><p>&nbsp;</p>
+		<div id="sidebar">
+		  <div class="box">
+            <ul  style="list-style-type:none;">
+              <li><a href="index.html">About</a></li>
+              <li><a href="newnode.html">Build A Node</a></li>
+              <li><a href="softwaresetup.html">Setup Node Software</a> </li>
+              <li><a href="localization.html">Localization</a> </li>
+              <li><a href="user_interface.html">User Interface</a> </li>
+              <li><a href="fault_injection.html">Fault Injection</a> </li>
+              <li><a href="publications.html">Publications</a> </li>
+            </ul>
+		    </div>
+		</div></td>
+        <td ><h1 class="style3">&nbsp;</h1>
+          <h1 class="style3"></h1>          
+         <h3 class="style3"><p><strong>Split GUI: Client and Controller</strong></p></h3>
+         <p>We have split MiNT-2 GUI into client and controller parts. With this approach, user only has to run the lightweight client GUI; avoiding the need to have entire MiNT controller installed at his machine.</p>
+		 <h3 class="style3"><p><strong>Uploading and executing ns3 script</strong></p></h3>
+         <p>MiNT-2 GUI offers simple interface to perform following actions.</p>
+          <dd>1. Initialize robots<br />
+          <dd>2. Set topology<br />          
+          <dd>3. Upload the ns3 script<br />
+          <dd>4. Execute the ns3 script<br />
+          <br />
+          </dd> The interface allows setting positions of robots either by clicking on the drawing area; representing experiment grid and then hitting 'Topology' button
+          or by selecting a particular robot using a spin button, setting co-ordinates for it and then hitting 'Send' button.
+	  Below is a sample snapshot of the interface. 
+             <p><img src="clientgui.png" width="279" height="303" /></p>
+	  The red filled circles represent the robot; or in other words 'node' in an experiment. The white line within it shows the direction. The empty black circle represents intended position, showing a red line from current position, which is path its intended to take.
+		 <h3 class="style3"><p><strong>Interpreting outcome of an experiment</strong></p></h3>
+         <p>As a result of executing an experiment, pcap logs are generated on each node. Pcap logs contain details of every packet sent or received by the given node.
+         These pcap files can be analyzed with tcpdump or wireshark.
+         <p>An experimenter can also choose to see the results as an animation using NetAnim tool.
+         <p>MiNT-2 provides a pcap parser, which collects logs from all nodes and processes them to generate a single XML file representing entire execution. This file can be fed as an input to NetAnim; which animates the nodes and network traffic. 
+         <p>Below is a snapshot of NetAnim in action:</p>
+         <p><img src="netanimscreen.png" width="379" height="303" /></p>
+         <p>&nbsp;</p> 
+         <h1 class="style3" style="margin-left:20px;" >&nbsp;</h1>
+          <p style="margin-left:20px;">&nbsp;</p></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

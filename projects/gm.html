@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - XCo </title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>
+Live Gang Migration of Virtual Machines
+</h1>
+VM migration plays an important role in facilitating proactive maintenance and load balancing in datacenters to deal with imminent failures or sudden load spikes. However, excessive network overhead when migrating VMs may violate the performance requirements of VMs dictated by Service Level Agreements (SLA). This overhead increases greatly when multiple VMs are migrated together. The resulting migration traffic overloads the core network links and leads to degradation of the network-bound applications running across the datacenter. State-of-the-art live migration techniques that optimize the migration of a single VM are insufficient when hundreds of VMs need to be migrated simultaneously. We present a network-friendly approach that works both within a host and across the entire cluster to reduce the network overhead of simultaneous live migration of multiple VMs. Our cluster-wide deduplication technique eliminates the retransmission of duplicate VM pages, reducing the network traffic by 60% compared to the default technique of QEMU/KVM. In addition, at each source host we apply differential compression to co-located VMs in order to exploit content similarity across nearly-identical pages.
+
+
+<h2> Publications </h2>
+<ol>
+
+<li> 
+	Umesh Deshpande, Brandon Schlinker, Eitan Adler, and Kartik Gopalan,
+      <b><i>Gang Migration of Virtual Machines using Cluster-wide Deduplication</b></i>,
+      In 13th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGrid),
+      Delft, The Netherlands, May 2013.
+      <A HREF="/publications/deshpande13gang.pdf">[pdf]</A>
+      <A HREF="/publications/deshpande13gang.bib">[bibtex]</A>
+
+      </li>
+
+  <li> 
+  Umesh Deshpande, Unmesh Kulkarni and Kartik Gopalan,
+  <b><i>Inter-rack Live Migration of Multiple Virtual Machines</b></i>,
+  Proc. of the 6th International Workshop on Virtualization Technologies in Distributed Computing,
+  Delft, The Netherlands, June 2012.
+  <A HREF="/publications/deshpande12interrack.pdf">[pdf]</A>
+  <A HREF="/publications/deshpande12interrack.bib">[bibtex]</A>
+
+  </li>
+
+<li>Umesh Deshpande, Xiaoshuang Wang, and Kartik Gopalan,
+        <b><i>Live Gang Migration of Virtual Machines.</i></b>
+        Proceedings of the 20th international symposium on High Performance Parallel and Distributed computing (HPDC), San Jose, CA, June 2011.
+    <A HREF="/publications/deshpande11live.pdf">[pdf]</A>
+    <A HREF="/publications/deshpande11live.bib">[bibtex]</A>
+  </li>
+
+ 
+</ol>
+
+<h2> Acknowledgement</h2>
+
+<p> This project is supported in part by the National Science Foundation (through grants 0845832, 0855204, 1320689, 1005153, and 1040666), and the Department of Education (GAANN).
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>

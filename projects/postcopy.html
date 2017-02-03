@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - PostCopy</title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>Post-Copy Based Live Migration of Virtual Machines</h1>
+
+<p>
+In this project, we have designed, implemented, and evaluated 
+a <i>Post-Copy</i>
+based approach for the live migration of virtual machines
+(VMs) across a gigabit LAN. Live migration is a pervasive feature
+of modern hypervisors. It facilitates server consolidation, system
+maintenance, and lower power consumption. Post-copy refers
+to the deferral of the memory-copy phase of live migration until
+after the VM's CPU state has been migrated to the target node. This
+is in contrast to the traditional <i>pre-copy</i> approach, which first copies
+the memory state over multiple iterations followed by the transfer
+of CPU execution state. The post-copy strategy provides a win-win
+by reducing the <i>total migration time</i> while maintaining the 
+liveness benefits of the pre-copy approach. We facilitate
+the use of post-copy with a specific instance of adaptive prepaging
+(also known as adaptive remote paging). Pre-paging eliminates all
+duplicate page transmissions and quickly removes any residual dependencies
+for the migrating VM from the source node. Our prepaging
+algorithm is able to reduce the number of page faults across
+the network to 17% of the VM's working set. Finally, we enhance
+both the original pre-copy and post-copy schemes with the use of a
+dynamic, periodic self-ballooning (DSB) strategy, which prevents
+the migration daemon from transmitting unnecessary free pages
+in the guest OS. DSB significantly speeds up both the pre-copy and
+post-copy migration schemes with very negligible performance 
+degradation to the processes
+running within the VM. We have implemented the post-copy approach
+in the Xen VM environment and showed that it significantly
+reduces the total migration time and network overheads across a
+range of real-world VM workloads when compared against 
+the traditional pre-copy approach.
+</p>
+
+<h2> Publications </h2>
+<ol>
+  <li>
+  Michael Hines and Umesh Deshpande and Kartik Gopalan,
+  <b><i>Post-Copy Live Migration of Virtual Machines</i></b>,
+  In SIGOPS Operating Systems Review, July 2009.
+  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy_osr.pdf">[pdf]</a>
+  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy_osr.bib">[bibtex]</a>
+  </li>
+
+	<LI>
+		Michael Hines and Kartik Gopalan,
+		<B><I>Post-Copy Based Live Virtual Machine Migration Using Adaptive Pre-Paging And Dynamic Self-Ballooning</I></B>,
+		In the International Conference on Virtual Execution Environments (VEE), Washington DC, March 2009.
+		<b>(Among four best papers at VEE 2009 selected for publication in OSR Special Issue).</b>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/hines09postcopy.pdf">[pdf]</A>
+		<A HREF="http://osnet.cs.binghamton.edu/publications/hines09postcopy.bib">[bibtex]</A>
+	</LI>
+
+	<li>
+		Michael Hines and Kartik Gopalan,
+		<b><i>MemX: Supporting Large Memory Workloads in Xen Virtual Machines</i></b>,
+		In Proc. of the International Workshop on Virtualization Technology in Distributed Computing (VTDC), Reno, NV, November 2007. 
+		<A HREF="../publications/hines07memx.pdf">[pdf]</A>
+		<A HREF="../publications/hines07memx.bib">[bibtex]</A> 
+	</li>
+</ol>
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>

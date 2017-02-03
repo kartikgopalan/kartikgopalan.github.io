@@ -1,0 +1,130 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - ABP (Wbridge)</title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+
+<h1>Wireless Ad Hoc Rouing Without Explicit Control Messages</h1>
+
+<p>
+In this work, we investigate techniques for ad hoc wireless routing
+without explicit control messages. 
+We develop a new wireless ad hoc routing
+protocol called Ad hoc Bridging Protocol (ABP). ABP distinguishes
+itself from earlier proposals in that it uses no explicit
+control messages for route discovery, setup, and maintenance,
+while making minimal use of implicit (data-like) control messages
+that require no special processing at intermediate nodes. ABP is
+inspired from the self-learning plug-and-play nature of traditional
+transparent bridges in wired LANs. Like wired bridges
+and many earlier ad hoc protocols, nodes in ABP learn and
+adapt routes to different destinations on-the-fly by observing the
+packets sent by those destinations. As a result, ABP is completely
+decentralized, self-starting, and automatically adapts to varying
+network conditions. However, a major difference is that ABP does
+not attempt to prevent routing loops at all costs. Consequently,
+ABP does not construct or maintain any overarching control
+infrastructure for loop prevention, such as extensive network-wide
+spanning trees in traditional LAN bridges, destination
+sequence numbers in AODV, or source-routing in DSR. The
+essential idea is to couple the backward learning technique from
+transparent bridging, with an associated refresh mechanism, and
+the use of an identification field to effectively limit the impact of
+any transient loops. We also prove that transient loops, if and
+when they occur, do not last longer than a bounded, short time
+interval and do not negatively impact the network performance.
+Results demonstrate that, even without explicit control messages,
+ABP can perform competitively in comparison to AODV and DSR
+protocols while significantly reducing the protocol complexity.
+</p>
+
+<h2>
+Publications
+</h2>
+
+<ol>
+<!--
+	<LI>
+		Kartik Gopalan, Navodaya Garepalli, and Ping Yang,
+		<B><I>Wireless Ad Hoc Routing Without Explicit Control Messages</I></B>
+		Technical Report TR-20060715, 
+		Operating Systems and Networks Lab, Dept. of Computer Science, Binghamton University, July 2006. (Submitted for publication).
+		<A HREF="http://osnet.cs.binghamton.edu/publications/TR-20060715.pdf">[pdf]</A>
+	</LI>
+-->
+  <li>
+  Navodaya Garepalli,  Kartik Gopalan, and Ping Yang,
+  <b><i>Control Message Reduction Techniques in Backward Learning Ad Hoc Routing Protocols</i></b>, 
+  In the International Conference on Computer Communication Networks (ICCCN) 2008, U.S. Virgin Islands, August 2008.
+	(<b><i>Best Paper Candidate</b></i>).
+  <a href="/publications/garepalli08control.pdf">[pdf]</a>
+  <a href="/publications/garepalli08control.bib">[bibtex]</a> 
+  </li>
+
+</ol>
+</div>  <!-- end content -->    
+
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>

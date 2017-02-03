@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - XCo </title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>
+XCo: Explicit Coordination to Prevent Ethernet Congestion in Cloud Computing Clusters
+</h1>
+
+Large cluster-based cloud computing platforms increasingly
+use commodity Ethernet technologies, such as Gigabit Ethernet,
+10GigE, and Fibre Channel over Ethernet (FCoE),
+for intra-cluster communication. Traffic congestion can become
+a performance concern in the Ethernet due to consolidation
+of data, storage, and control traffic over a common
+layer-2 fabric, as well as consolidation of multiple virtual
+machines (VMs) over less physical hardware. Even as
+networking vendors race to develop switch-level hardware
+support for congestion management, we make the case that
+virtualization has opened up a complementary set of opportunities
+to reduce or even eliminate network congestion in
+cloud computing clusters. We present the design, implementation,
+and evaluation of a system called XCo, that performs
+explicit coordination of network transmissions over a shared
+Ethernet fabric to proactively prevent network congestion.
+XCo is a software-only distributed solution executing only
+in the end-nodes. A central controller uses explicit permissions
+to temporally separate (at millisecond granularity) the
+transmissions from competing senders through congested
+links. XCo is fully transparent to applications, presently
+deployable, and independent of any switch-level hardware
+support. We present a detailed evaluation of our XCo prototype
+across a number of network congestion scenarios, and
+demonstrate that XCo significantly improves network performance
+during periods of congestion.
+
+<h2> Publications </h2>
+<ol>
+
+  <li> Vijay Shankar Rajanna, Smit Shah, Anand Jahagirdar, Christopher Lemoine, and Kartik Gopalan,
+	<b><i>XCo: Explicit Coordination to Prevent Network Fabric Congestion in Cloud Computing Cluster Platforms</i></b>, 
+	In Proc. of 19th ACM International Symposium on High Performance Distributed Computing (HPDC), Chicago, Illinois, USA, 2010.
+    <A HREF="/publications/rajanna10xco_hpdc.pdf">[pdf]</A> 
+    <A HREF="/publications/rajanna10xco_hpdc.bib">[bibtex]</A> 
+  </li>
+
+  <li> Vijay Shankar Rajanna, Smit Shah, Anand Jahagirdar and Kartik Gopalan,
+	<b><i>XCo: Explicit Coordination for Preventing Congestion in Data Center Ethernet</i></b>, 
+	In Proc. of 6th IEEE International Workshop on Storage Network Architecture and Parallel I/Os, Incline Village, NV, USA, 2010.
+    <A HREF="/publications/rajanna10xco_snapi.bib">[bibtex]</A> 
+  </li>
+ 
+</ol>
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>

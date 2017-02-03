@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Untitled Document</title>
+<link href="main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style3 {	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	line-height:25px;
+}
+-->
+</style>
+</head>
+
+<body>
+<div align="center"><table width="779" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><h2 align="left" class="style3">Operating Systems and Networks Lab (OSNET) <br />
+          MiNT-2 Project </h2></td>
+        <td><img src="256px-Mint.png" alt="" width="256" height="94" border="0" align="right" /></td>
+      </tr>
+    </table></td>
+  </tr>
+   <!-- <tr>
+    <td id="nav" ><a href="">OSNET HOME </a> <a href="">PEOPLE</a> <a href="">PUBLICATIONS</a> <a href="">PROJECTS</a> <a href="">COURSES</a> <a href="">INTERNAL</a> <a href="">SUPPORT</a> </td>
+  </tr> -->
+  <tr>
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top" style="margin-top:0px;"><p>&nbsp;</p>
+		<div id="sidebar">
+		  <div class="box">
+            <ul  style="list-style-type:none;">
+              <li><a href="index.html">About</a></li>
+              <li><a href="newnode.html">Build A Node</a></li>
+              <li><a href="softwaresetup.html">Setup Node Software</a> </li>
+              <li><a href="localization.html">Localization</a> </li>
+              <li><a href="user_interface.html">User Interface</a> </li>
+              <li><a href="fault_injection.html">Fault Injection</a> </li>
+              <li><a href="publications.html">Publications</a> </li>
+            </ul>
+		    </div>
+		</div></td>
+        <td ><h1 class="style3">&nbsp;</h1>
+          <h1 class="style3"></h1>          
+         <h2 class="style3"><p><strong>Motivation</strong></p></h2>
+         <p>Developers of new wireless network protocols typically go through
+a tedious and error-prone process of testing and debugging
+various network and protocol settings.
+They perform a number of tasks manually; such as configuration 
+of numerous network settings, controlled
+reproduction of anomalous protocol behavior, and
+traffic capture and analysis.
+<p>In addition to miniaturizing the test setup; MINT-2 provides an ability
+to inject faults to assist developers and protocol testers to test their 
+protocol implementations.
+The central aim is to speed up the process of testing and analysis of 
+situations where a protocol implementation fails to behave as expected. 
+
+<p>MINT-2 allows  the protocol developer to specify faults 
+using simple iptables-like rules at run time and record the
+protocol responses against these faults so that the user can verify 
+whether a protocol operates as intended.
+
+<p>We have implemented fault injection framework in Linux kernel. 
+Following sections describe it in more detail. We are also developing
+similar fault injection framework for ns3.
+
+<h2 class="style3"><p><strong>Fault Specification</strong></p></h2>
+<p>Faults are specified in a file and uploaded by the MiNT-2 user. 
+The rule in the fault specification file resemble the iptables rule. 
+MiNT-2 supports unique distributed faults. Which means user can specify the 
+faults and network monitoring policies for the whole experiment in one file.
+Therefore rules used are extensions of the existing iptables rules.
+
+<p>One example of our extended iptables rule is shown as below:</p>
+
+<b>iptables -p tcp -s 1 -enodes 3,7 -anodes * -j reboot</b>
+
+<p>The above extended iptables rule means on event nodes 3 and 7, which is
+specified in <b>-enodes</b> option, monitor the TCP traffic from source node 1,
+which is specified in <b>-s</b>. Whenever a packet meets such rule, all the
+action nodes specified by <b>-anodes *</b> will execute action reboot which is
+specified by <b>-j reboot</b>
+
+<p>The parser converts the above specification into an iptables 
+rule for each event node.          
+It also replaces the node ID with the IP address of the corresponding
+node by referring to a mapping table. Below figure show high level architecture.
+
+<p><img src="ruleparser.png" width="600" height="400" /></p>
+
+<p>For example, the above rule is converted into the following per-node specification for enodes
+3 and 7. The parser generated rule is the same for both enodes.
+                                   
+<p><b>iptables -p tcp -s 192.168.1.1 -j COR --action reboot --mac-source 255:255:255:255</b>
+                                   
+<p>The controller sends the per-node rule specification generated 
+by the parser to the respective nodes. Once each node receives
+its individual fault specifications, the controller will trigger the
+user-supplied experiment to exercise the protocol under test.
+
+
+<h2 class="style3"><p><strong>Protocol Fault Modules</strong></p></h2>
+To make sure the correctness of the wireless protocol, the user need to test
+their protocol against some rarely seen cases.  However, in real network
+environment, these corner cases are not easy to happen. In order to solve such
+problem, we add a fault-injection feature for the MiNT-2 framework. The
+fault-injection component works together with the fault specification rules. If
+a certain rule matches a particular packet, the fault-injection will get
+triggered and it will inject the specified fault into the real network. Last but
+not least, we also need to mention the time synchronization technique utilized
+by the fault-injection. 
+ 
+ 
+<p>There are two types of Fault-injection modules: (1) local fault-injection
+module (2) remote fault-injection module. For each type of faults, we have
+implemented both local and remote fault-injection module.  All the
+fault-injection modules are implemented using xtable extension modules which is
+a kind of kernel module.  This advantage gives us a great many freedom to
+manipulate the kernel functionalities and the network adapter properties such
+as the transmit power of the network adapter. Currently we have implemented a
+few fault-injection modules:
+<h4><p><strong>Reboot</strong></p></h4>
+The Reboot Module will emulate the system crash during the experiment. When
+launched, the kernel will reboot. All the data saved in memory will be not
+valid after reboot. This module is useful when the protocol designer wants to
+see if the wireless protocol will tolerate the error when one or more nodes
+restart.
+<h4><p><strong>Delay</strong></p></h4>
+The Delay Module creates a buffer inside the system and each incoming packet is
+get delayed for an amount of time. This modules is usually used to test if the
+wireless protocol will notice the packet delay and take the packet delay time
+as a factor when making route decision for the network packets.
+<h4><p><strong>Duplicate</strong></p></h4>
+The action performed by Duplicate Module, just as the name conveys, will
+duplicate the matching packet and send it out through the same network
+interface. The duplicated packet will test if the wireless protocol can
+tolerate the existence of multiple copies of the same packet
+<h4><p><strong>Reorder</strong></p></h4>
+This module, differ from Delay Module in that it will reorder the incoming
+packets and send them out in a different order. Some packets might get a very
+short period of delay when  using this module. However, compared with the Delay
+Module, the Reorder Module's delay time is much less.
+<h4><p><strong>Modify</strong></p></h4>
+The ModifyPacket Module will filter the matching packet and modify the content
+of the packet before sending it out. This module takes a parameter of
+modification list. For the matching packet, this module will make changes to
+the packet according to the modification list.
+<h2 class="style3"><p><strong>Event Action Faults</strong></p></h2>
+<p>Finding a way to organize the network event dependencies is one of our protocol
+evaluation platform's goal. Individual network events can arise without
+interactions with other network components. Yet, many network events have
+dependencies among each other. 
+To organize the network events in a
+cause-effect order, we introduce the Event-Action message in our framework.
+</p>
+<p><img src="eventaction.png" width="600" height="400" /></p>
+<p>Each individual network event is monitored by
+the event node's iptables. When an iptables rule is met and a particular event
+is triggered. A coordination module(COR) executes and sends a event-action
+message to the specified action node.
+ 
+<p>The event-action message is a packet using a customized network protocol.
+This packet contains the destination address as well as the action command
+detail. In case of a event-action chain, the action node which receives an
+event-action message will have another event trggered and the action node 
+will act like another event node and send another event-action message to 
+the second action node.
+ 
+<p>When the action node gets the event-action message, it will process the
+information inside the packet. First it will check if the packet's target
+information is the same as the action node itself. If the event-action
+message's target is not the action node itself, it will discard the packet.
+Otherwise, the action node will process the action information and parameters.
+Finally, the action node injects the specified faults in the event-action
+message.
+         <p>&nbsp;</p> 
+         <h1 class="style3" style="margin-left:20px;" >&nbsp;</h1>
+          <p style="margin-left:20px;">&nbsp;</p></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - MemX (Anemone)</title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>Privacy-preserving Virtual Machines</h1>
+
+<p>
+This project investigates ways to cleanly isolate, track, and process/exclude the 
+footprint of confidential applications in virtualized clouds.
+For instance, 
+Virtual Machine (VM) checkpointing enables a user to capture a
+snapshot of a running VM on persistent storage. VM checkpoints
+can be used to roll back the VM to a previous "good" state in order to recover from a VM crash or to undo a previous VM activity.
+Although VM checkpointing eases systems administration and improves usability, it can also increase the risks of exposing sensitive
+information. This is because the checkpoint may store VM's physical memory pages that contain confidential information such as
+clear text passwords, credit card numbers, patients' health records,
+tax returns, etc.
+We have designed and implemented techniques for privacy-preserving VM checkpointing
+that selectively exclude/process application memory
+that contain sensitive data from being checkpointed. 
+Ongoing research involves the investigation of VM Cloning mechanisms for
+lightweight and transparent privacy-preserving virtual machines.
+</p>
+
+<h2> Publications </h2>
+<ol>
+	<li>
+		Mikhail Gofman, Ruiqi Luo, Chad Wyszynski, Yaohui Hu, Ping Yang, and Kartik Gopalan, 
+		<b><i>Privacy-preserving Virtual Machine Checkpointing Mechanism</b></i>,
+		In Special Issue on Information Assurance and System Security in Cloud Computing, Journal of Cloud Computing, 3(3), pages 245--266, 2014.
+		<A HREF="/publications/gofman14privacy.pdf">[pdf]</A> 
+		<A HREF="/publications/gofman14privacy.bib">[bibtex]</A> 
+	</li>
+
+	<li>
+		Yaohui Hu, Tianlin Li, Ping Yang, and Kartik Gopalan, 
+		<b><i>An Application-Level Approach for Privacy-preserving Virtual Machine Checkpointing</b></i>, 
+		In the 6th IEEE International Conference on Cloud Computing, research track, 2013.
+	    <A HREF="/publications/hu13application.pdf">[pdf]</A> 
+	    <A HREF="/publications/hu13application.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Mikhail Gofman, Ruiqi Luo, Ping Yang, and Kartik Gopalan, 
+		<b><i>SPARC: A Security and Privacy Aware Virtual Machine Checkpointing Mechanism</b></i>, 
+		Proc. of the 10th annual ACM Workshop on Privacy in the Electronic Society (WPES), In conjunction with the ACM Conference on Computer and Communications Security (CCS), full paper, Chicago, IL, 2011.
+	    <A HREF="/publications/gofman11sparc.pdf">[pdf]</A> 
+	    <A HREF="/publications/gofman11sparc.bib">[bibtex]</A> 
+	</li>
+
+</ol>
+
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - MemX (Anemone)</title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>MemX : Supporting Large Memory Workloads on Virtualized Commodity Clusters</h1>
+
+<p>
+Modern enterprise and grid computing applications increasingly
+execute on clusters that virtualize the underlying
+physical resources to improve cluster-wide utilization efficiency.
+These applications tend to have memory and I/O intensive workloads,
+such as large databases, data mining, scientific workloads,
+and web services, which can strain the limited I/O and memory
+resources within a single physical or virtual machine. 
+In this project, we have developed a distributed system, called
+<b><i>MemX</i></b>, 
+that can virtualize the use
+of cluster-wide memory resources to transparently support 
+large memory and I/O intensive workloads.
+Applications using MemX do not require
+specialized APIs, libraries, recompilation, relinking, 
+or dataset pre-partitioning. 
+MemX can operate in both native Linux and virtual machine
+environments to support low-latency I/O, paging, and global 
+shared namespaces over cluster-wide memory.
+Performance evaluation
+using several resource-intensive benchmarks in both virtualized
+and non-virtualized Linux shows that large
+dataset applications and multiple concurrent VMs achieve significant
+speedups using MemX compared against local
+and iSCSI disks. As an added benefit, live Xen
+VMs using MemX can migrate seamlessly without disrupting any
+running applications.
+</p>
+
+<h2> Publications </h2>
+<ol>
+	<li>Umesh Deshpande, Beilan Wang, Shafee haque, Michael Hines, and Kartik Gopalan,
+		<b><i>MemX: Virtualization of Cluster-wide Memory</i></b>, 
+		In Proc. of 39th International Conference on Parallel Processing (ICPP), San Diego, CA, USA, September 2010.
+    <A HREF="/publications/deshpande10memx.pdf">[pdf]</A> 
+    <A HREF="/publications/deshpande10memx.bib">[bibtex]</A> 
+	</li>
+
+	<li>
+		Michael Hines and Kartik Gopalan,
+		<b><i>MemX: Supporting Large Memory Workloads in Xen Virtual Machines</i></b>,
+		In Proc. of the International Workshop on Virtualization Technology in Distributed Computing (VTDC), Reno, NV, November 2007. 
+		<A HREF="../publications/hines07memx.pdf">[pdf]</A>
+		<A HREF="../publications/hines07memx.bib">[bibtex]</A> 
+	</li>
+
+	<li>
+		Michael Hines, Jian Wang, Kartik Gopalan,
+		<b><i>Distributed Anemone: Transparent Low-Latency Access to Remote Memory in Commodity Clusters</i></b>,
+		In Proc. of the International Conference on High Performance Computing (HiPC), December 2006.
+		<A HREF="../publications/hines06distributed.pdf">[pdf]</A> 
+		<A HREF="../publications/hines06distributed.bib">[bibtex]</A> 
+	</li>
+
+<!--
+	<li>
+		Michael Hines, Mark Lewandowski, Jian Wang, Kartik Gopalan,
+		<b><i>Implementation Experiences in Transparently Harnessing Cluster-wide Memory</i></b>,
+		In Proc. of the International Symposium on Performance Evaluation of Computer and Telecommunication Systems (SPECTS), Calgary, Canada, July 2006.
+		<A HREF="../publications/hines06implementation.pdf">[pdf]</A> 
+		<A HREF="../publications/hines06implementation.bib">[bibtex]</A> 
+	</li>
+-->
+</ol>
+
+
+<h2> Acknowledgement</h2>
+This material is based upon work supported in part by the National Science Foundation under grants 0855204 and 0845832
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+<!-- Start -->
+<script type="text/javascript">
+var sc_project=3419698; 
+var sc_invisible=1; 
+var sc_partition=38; 
+var sc_security="8fb5b358"; 
+</script>
+
+</body>
+</html>

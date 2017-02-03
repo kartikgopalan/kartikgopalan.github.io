@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Binghamton Operating Systems and Networks Lab - Projects - XCo </title>
+    <link href="/css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #333300;
+	font-size: 30px;
+}
+.style3 {
+	color: #933;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+}
+.style4 {color: #333333}
+.style5 {color: black}
+-->
+</style>
+</head>
+
+<body>
+
+<div class="style1" id=header>
+  <table width=100%>
+   <tr>
+   <td>
+	<h2 align="left" class="home style3">Operating Systems and Networks Lab (OSNET)</h2>
+   </td>
+   <td>
+    <a  id="BUlink" href="http://www.binghamton.edu"></a>      
+   </td>
+   </tr>
+  </table>
+</div>
+
+
+<div id="wrapper" class="people">
+
+<div id="nav">
+    <a id="first" href="/index.html">ABOUT</a>
+    <a href="/people/">PEOPLE</a>
+    <a href="/publications/">PUBLICATIONS</a>
+    <a class="active" href="/projects/">PROJECTS</a>
+    <a href="/internal.html">INTERNAL</a>
+    <a id="last" href="/support.html">SUPPORT</a>
+</div>
+
+<div id="content">
+
+<h1>
+Scatter-Gather Live Migration of Virtual Machines
+</h1>
+
+Traditional metrics for live migration of virtual machines (VM) include 
+total migration time, downtime, network overhead, and application degradation. 
+In this project, we introduce a new metric, <i>eviction time</i>, defined as 
+the time to evict the entire state of a VM from the source host. 
+Eviction time determines how quickly the source host can be taken offline, 
+or the freed resources re-purposed for other VMs. In traditional approaches 
+for live VM migration, such as pre-copy and post-copy, 
+eviction time is equal to the total migration time, because the source and 
+destination hosts are coupled for the duration of the migration. 
+Eviction time increases if the destination host is slow to receive the 
+incoming VM, such as due to insufficient memory or network bandwidth, 
+thus tying up the source host. We have develped a new approach, called Scatter-Gather 
+live migration, which reduces the eviction time when the destination host 
+is resource constrained. The key idea is to decouple the source and the 
+destination hosts. The source scatters the VM's memory state quickly to 
+multiple intermediaries (hosts or middleboxes) in the cluster. 
+Concurrently, the destination gathers the VM's memory from the intermediaries 
+using a variant of post-copy VM migration. We have implemented a prototype 
+of Scatter-Gather in the KVM/QEMU platform. In our evaluations, 
+Scatter-Gather reduces the VM eviction time by up to a factor of 6 
+while maintaining comparable total migration time against traditional 
+pre-copy and post-copy for a resource constrained destination.
+
+
+<h2> Publications </h2>
+<ol>
+
+	<li>
+		Umesh Deshpande, Danny Chan, Steven Chan, Kartik Gopalan, Nilton Bila,
+		<b><i>Scatter-Gather Migration of Virtual Machines</i></b>,
+		In IEEE Transactions on Cloud Computing, To Appear, Accepted September 2015.
+		<A HREF="/publications/deshpande15scatter.pdf">[preprint]</A> 
+		<!-- <A HREF="/publications/deshpande14fast.bib">[bibtex]</A> -->
+	</li>
+
+	<li>
+		Umesh Deshpande, Yang You, Danny Chan, Nilton Bila, Kartik Gopalan,
+		<b><i>Fast Server Deprovisioning through Scatter-Gather Live Migration of Virtual Machines</b></i>,
+		In Proc. of IEEE Cloud 2014 (Research Track), Anchorage, Alaska.
+		<A HREF="/publications/deshpande14fast.pdf">[pdf]</A> 
+		<A HREF="/publications/deshpande14fast.bib">[bibtex]</A> 
+	</li>
+
+ 
+</ol>
+
+<h2> Presentations </h2>
+<ol>
+	<li>
+		<b><i>Scatter-Gather Live Migration of Virtual Machines</b></i>,
+		In Workshop on Recent Advances in High-Performance Parallel and Distributed Computing, Evanston, IL, 2014.
+		<A HREF="/publications/sg_hpdc_workshop_presentation.pdf">[pdf]</A> 
+	</li>
+</ol>
+
+<h2> Acknowledgement</h2>
+
+<p> This project is supported in part by the National Science Foundation (through grants 0845832, 0855204, 1320689, 1005153, and 1040666), and the Department of Education (GAANN).
+
+</div>  <!-- end content -->    
+
+<div id="sidebar">
+        <ul>
+             <li><a href="index.html#recent">Recent Projects</a></li>
+             <li><a href="index.html#past">Past Projects</a></li>
+        </ul>        
+</div>
+
+<div class="clear_element"></div>
+
+</div> <!-- end wrapper --> 
+
+<div id="footer">
+</div>
+
+</body>
+</html>
