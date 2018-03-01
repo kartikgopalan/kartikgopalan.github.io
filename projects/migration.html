@@ -52,8 +52,10 @@
 <div id="content">
 
 <a name="recent"> <h1>High-Performance, Robust, and Secure Live Migration of Virtual Machines</h1> </a>
-<p>Virtual machines (VM) are one of the fundamental building blocks of modern cloud computing infrastructure. Live migration of VMs is a key feature of server virtualization that underlies numerous operations in cloud computing platforms such as routine maintenance, load balancing, scaling to handle peak demands, and saving energy. The ability to perform fast, robust, and secure live migration of VMs across physical machines is critical for flexible administration and usability of cloud infrastructure. 
-Our group has investigated and developed a number of live VM migration techniques as part of this research.</P>
+<p>Virtual machines (VM) are one of the fundamental building blocks of modern cloud computing infrastructure. 
+Live migration of VMs is a key feature of server virtualization and underlies numerous operations in cloud platforms such as routine maintenance, load balancing, scaling to handle peak demands, and saving energy. 
+This research focuses on high-performance, robust, scalable, and secure techniques for live VM migration.
+Our group has investigated and developed a number of new live VM migration techniques.</P>
 <ol>
 
         <li><a href="/projects/postcopy.html">Post-Copy Migration</a> that provides deterministic migration time by first migrating the VM's execution state to the destination followed by a single-pass memory transfer.</li> 
@@ -101,6 +103,100 @@ Our group has investigated and developed a number of live VM migration technique
 	<li>Dr. Charles Kamhoua, Air Force Rome Research Labs</li>
 	<li>Dr. Kevin Kwiat, Air Force Rome Research Labs</li>
 
+<h2>Publications</h2>
+<ol>
+	<li>
+		Hardik Bagdi, Rohith Kugve, Kartik Gopalan,
+		<b><i>HyperFresh: Live Refresh of Hypervisors Using Nested Virtualization</b></i>,
+		ACM Asia-Pacific Workshop on Systems (APSys) 2017, Mumbai, India.
+		<A HREF="/publications/bagdi17hyperfresh.pdf">[paper]</A> 
+		<A HREF="/publications/bagdi17hyperfresh.bib">[bibtex]</A> 
+	</li>
+
+	<li>
+		D. Fernando, H. Bagdi, Y. Hu, P. Yang, K. Gopalan, C. Kamhoua, and K. Kwiat, 
+		<b><i>Quick Eviction of Virtual Machines Through Proactive Live Snapshots</i></b>, 
+		Full paper, IEEE/ACM International Conference on Utility and Cloud Computing (UCC) 2016,
+		<A HREF="/publications/fernando16quick.pdf">[paper]</A> 
+		<A HREF="/publications/fernando16quick.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Dan Williams, Yaohui Hu, Umesh Deshpande, Nilton Bila, Kartik Gopalan, Hani Jamjoom, 
+		<b><i>Enabling Efficient Hypervisor-as-a-Service Clouds with Ephemeral Virtualization</i></b>,
+		In International Conference on Virtual Execution Environments (VEE) 2016.
+		<A HREF="/publications/williams16enabling.pdf">[paper]</A> 
+		<A HREF="/publications/williams16enabling.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Umesh Deshpande, Danny Chan, Ten-Young Guh, James Edouard, Kartik Gopalan,  Nilton Bila,
+		<b><i>Agile Live Migration of Virtual Machines</i></b>,
+		In International Parallel and Distributed Processing Symposium (IPDPS) 2016.
+		<A HREF="/publications/deshpande16agile.pdf">[paper]</A> 
+		<A HREF="/publications/deshpande16agile.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Umesh Deshpande, Danny Chan, Steven Chan, Kartik Gopalan, Nilton Bila,
+		<b><i>Scatter-Gather Migration of Virtual Machines</i></b>,
+		In IEEE Transactions on Cloud Computing, September 2015.
+		<A HREF="/publications/deshpande15scatter.pdf">[paper]</A> 
+		<A HREF="/publications/deshpande15scatter.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Yaohui Hu, Sanket Panhale, Tianlin Li, Emine Ugur Kaynar, Danny Chan, Umesh Deshpande, Ping Yang, Kartik Gopalan, 
+		<b><i>Performance Analysis of Encryption in Securing the Live Migration of Virtual Machines</b></i>,
+		In IEEE Cloud 2015, 
+		<A HREF="/publications/hu15performance.pdf">[paper]</A> 
+		<A HREF="/publications/hu15performance.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Umesh Deshpande, Yang You, Danny Chan, Nilton Bila, Kartik Gopalan,
+		<b><i>Fast Server Deprovisioning through Scatter-Gather Live Migration of Virtual Machines</b></i>,
+		In IEEE Cloud 2014 (Research Track), Anchorage, Alaska.
+		<A HREF="/publications/deshpande14fast.pdf">[paper]</A> 
+		<A HREF="/publications/deshpande14fast.bib">[bibtex]</A> 
+	</li>
+	<li>
+		Umesh Deshpande, Brandon Schlinker, Eitan Adler, and Kartik Gopalan, 
+		<b><i>Gang Migration of Virtual Machines using Cluster-wide Deduplication</b></i>,
+		In 13th IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing (CCGrid),
+		Delft, The Netherlands, May 2013.
+		<A HREF="/publications/deshpande13gang.pdf">[paper]</A> 
+		<A HREF="/publications/deshpande13gang.bib">[bibtex]</A> 
+	</li>
+
+	<li>
+		Umesh Deshpande, Unmesh Kulkarni and Kartik Gopalan, 
+		<b><i>Inter-rack Live Migration of Multiple Virtual Machines</b></i>,
+		Proc. of the 6th International Workshop on Virtualization Technologies in Distributed Computing,
+		Delft, The Netherlands, June 2012.
+		<A HREF="/publications/deshpande12interrack.pdf">[paper]</A> 
+		<A HREF="/publications/deshpande12interrack.bib">[bibtex]</A> 
+	</li>
+
+	<li>Umesh Deshpande, Xiaoshuang Wang, and Kartik Gopalan,
+	<b><i>Live Gang Migration of Virtual Machines.</i></b>
+	Proceedings of the 20th international symposium on High Performance Parallel and Distributed computing (HPDC), San Jose, CA, June 2011.
+    <A HREF="/publications/deshpande11live.pdf">[paper]</A> 
+    <A HREF="/publications/deshpande11live.bib">[bibtex]</A> 
+	</li>
+
+	  <li>
+	  Michael Hines, Umesh Deshpande, and Kartik Gopalan,
+	  <b><i>Post-Copy Live Migration of Virtual Machines</i></b>,
+	  In SIGOPS Operating Systems Review, Volume 43, Number 3, pages 14--26, 2009.
+	  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy_osr.pdf">[paper]</a>
+	  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy_osr.bib">[bibtex]</a>
+	  </li>
+
+	  <li>
+	  Michael Hines and Kartik Gopalan,
+	  <b><i>Post-Copy Based Live Virtual Machine Migration Using Adaptive Pre-Paging And Dynamic Self-Ballooning</i></b>,
+	  In the International Conference on Virtual Execution Environments (VEE), Washington DC, March 2009.
+	  <b>(Among four best papers at VEE 2009 selected for publication in OSR Special Issue).</b>
+	  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy.pdf">[paper]</a>
+	  <a href="http://osnet.cs.binghamton.edu/publications/hines09postcopy.bib">[bibtex]</a>
+	  </li>
+</ol>
 
 <h2>Funding</h2>
 
