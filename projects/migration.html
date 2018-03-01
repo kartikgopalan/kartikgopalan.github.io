@@ -53,18 +53,21 @@
 
 <a name="recent"> <h1>High-Performance, Robust, and Secure Live Migration of Virtual Machines</h1> </a>
 <p>Virtual machines (VM) are one of the fundamental building block of modern cloud computing infrastructure. Live migration of VMs is a key feature of server virtualization that underlies numerous operations in cloud computing platforms such as routine maintenance, load balancing, scaling to handle peak demands, and saving energy. The ability to perform fast, robust, and secure live migration of VMs across physical machines is critical for flexible administration and usability of cloud infrastructure. 
-Our group has developed a number of live VM migration techniques as part of this research.</P>
+Our group has investigated and developed a number of live VM migration techniques as part of this research.</P>
 <ol>
 
-        <li><a href="/projects/postcopy.html">Post-Copy Migration</a></li> 
-	<li><a href="/projects/gm.html">Gang Migration</a></li>
-	<li><a href="/projects/sg.html">Scatter-Gather Migration</a></li>
-	<li><a href="/publications/hu15performance.pdf">Encrypted Live Migration</a></li>
-	<li><a href="/publications/deshpande16agile.pdf">Agile Migration</a></li>
-	<li><a href="/publications/fernando16quick.pdf">Quick Eviction</a></li>
-	<li><a href="/publications/williams16enabling.pdf">Ephemeral Virtualization</a></li>
-	<li><a href="/publications/bagdi17hyperfresh.pdf">HyperFresh</a></li>
+        <li><a href="/projects/postcopy.html">Post-Copy Migration</a> that provides deterministic migration time by first migrating the VM's execution state to the destination followed by a single-pass memory transfer.</li> 
+	<li><a href="/projects/gm.html">Gang Migration</a> for simultaneous live migration of multiple virtual machines using cluster-wide page deduplication.</li>
+	<li><a href="/projects/sg.html">Scatter-Gather Migration</a> for fast deprovisioning of servers via intermediaries.</li>
+	<li><a href="/publications/deshpande16agile.pdf">Agile Migration</a> to improve responsiveness of migration to source-side resource pressures.</li>
+	<li><a href="/publications/fernando16quick.pdf">Quick Eviction</a> to rapidly evict a VM using incremental snapshots.</li>
+	<li><a href="/publications/hu15performance.pdf">Encrypted Live Migration Evaluation</a> that uncovered dependencies between migration mechanisms, encryption algorithms, and workload types. </li>
+	<li><a href="/publications/williams16enabling.pdf">Ephemeral Virtualization</a> for sub-second control transfer of a VM between co-located hypervisor-level services.</li>
+	<li><a href="/publications/bagdi17hyperfresh.pdf">HyperFresh</a> for live replacement of hypervisors beneath running VMs.</li>
 </ol>
+
+<h2> Principal Investigators:</h2>
+<a href=http://kartikgopalan.github.io>Kartik Gopalan</a> and <a href=http://www.cs.binghamton.edu/~pyang>Ping Yang</a>
 
 <h2> Acknowledgement</h2>
 
