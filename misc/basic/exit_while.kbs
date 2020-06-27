@@ -1,0 +1,9 @@
+name$ = ""
+while (name$ <> "Foo") 
+	input "Who? ", name$
+	if (name$ = "Mickey") then
+		exit while 
+	end if 
+	print "Hello " + name$ 
+end while 
+print "Bye!"

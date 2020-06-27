@@ -1,0 +1,7 @@
+input "How many Hellos? ", howmany
+index = 1
+do
+ print "Hello " + index
+ index = index + 1
+until (index > howmany)
+print "Bye!"

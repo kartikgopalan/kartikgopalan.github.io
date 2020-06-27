@@ -1,0 +1,8 @@
+do
+ input "Who? ", name$
+ if (name$ = "Mickey") then
+	exit do 
+ end if
+ print "Hello " + name$
+until (name$ = "Foo")
+print "Bye!"

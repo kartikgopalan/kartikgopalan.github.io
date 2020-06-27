@@ -1,0 +1,8 @@
+
+input "How many Hellos? ", howmany 
+index = 1 
+while (index <= howmany) 
+	print "Hello " + index 
+	index = index + 1 
+end while 
+print "Bye!"

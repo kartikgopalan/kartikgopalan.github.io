@@ -1,0 +1,7 @@
+start: input "Say Hello: ", message$ 
+if (message$ = "Hello") then 
+	goto exit 
+else 
+	goto start 
+end if 
+exit: print "Bye!"
