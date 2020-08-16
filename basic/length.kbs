@@ -1,0 +1,4 @@
+s$ = "Hello"
+len = length(s$)
+print len
+print right(s$, len - 1)
