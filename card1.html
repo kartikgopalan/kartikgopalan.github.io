@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A birthday card for Tara.</title>
+<style>
+body {
+  background-color: rgba(123,157,198,1);
+  text-align: center;
+  color: white;
+  font-family: Microsoft JhengHei;
+  margin: 0;
+}
+
+button {
+  position: fixed;
+  background: linear-gradient(#56789f, #012345);
+  padding: 10px 20px 10px 20px;
+  color: white;
+  font-family: Geneva;
+  border: 1px solid white;
+  border-radius: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover {border-color: #eeeeee;}
+
+button:active {
+  background: linear-gradient(#012345, #56789f);
+  
+}
+
+.confetti {
+  position: fixed;
+  z-index:2;
+  background: url('https://freepngimg.com/thumb/ballons/4-2-balloons-png-7.png');
+  background-size: cover;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin-top:100%;
+  transition:2s linear;
+}
+
+.confetti:target {
+  margin-top:-100%;
+}
+
+.afterconfetti {
+  position: fixed;
+  margin-bottom: -100%;
+  background: rgba(123,157,198,1);
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  text-align: left;
+  padding: 50px;
+  padding-bottom:-50px;
+  font-family: Monospace;
+  font-size: 20px;
+  color:#12349f;
+}
+
+.tiny {
+  font-size:15px;
+}
+
+b {
+  color: #123456;
+  font-size: 28px;
+}
+
+h1 {
+  color: #123456;
+}
+</style>
+</head>
+<body>
+<div class = "confetti" id = "confetti"></div>
+<a href = "#confetti"><button onclick = "drag()">CLICK ME!</button></a>
+<div class = "afterconfetti" id = "dragged"><br><br><br><br>Dear Tara,<br><br><h1>Happy birthday!</h1> For your 10<span class = "tiny"><strong>th</strong></span> birthday, we made a special HTML card! You have now added a digit to your age!<br><br><h1>Congratulations!</h1>From your cousin<b> Nevin</b></div>
+</body>
+<script>
+function drag() {
+  setTimeout(function(){document.getElementById("dragged").style.marginBottom = "0"}, 1000);
+}
+</script>
+</html>
+
