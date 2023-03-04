@@ -1,0 +1,45 @@
+* {
+    font-weight: 100;
+  }
+  body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+
+  .topheader {
+    padding: 100px;
+    text-align: center;
+    background: #04aa6d;
+    color: white;
+  }
+
+  main {
+    margin: 100px;
+  }
+
+  main h2 {
+    text-align: center;
+  }
+
+  main img {
+      width: calc(100vw - 200px);
+  }
+
+  nav {
+      background: #333333;
+      color: white;
+      padding: 10px 0 10px 0;
+  }
+
+  nav span {
+      text-decoration: underline;
+  }
+
+  nav a {
+    padding: 10px;
+    color: dodgerblue;
+  }
+
+  nav a:visited {
+      color: #04aa6d;
+  }

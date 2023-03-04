@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href = "style.css" rel = "stylesheet">
+    <title>Just Passing By America</title>
+  </head>
+  <body>
+    <nav id = "chapternav"><a>Home</a><a>1</a><a>2</a><a>3</a><a>4</a><a>5</a><a>6</a><a>7</a><a>8</a><a>9</a><a>10</a><a>11</a><a>12</a></nav>
+    <div class = "topheader"><h1>Just Passing By America</h1><h3>My journey across the continent</h3></div>
+    <main>
+      <p>Q : How do you eat an elephant?
+        <br>A : Bit by bit.
+      </p>
+      <p>Here's the story of my 12 day journey from New York to San Francisco
+      in the September of 1999, when I was a grad student with plenty of time but 
+      little money. Without a cell phone or a GPS, armed only with a Rand McNealy Road Atlas
+      and a bunch of AAA maps, I drove across this vast beautiful land and 
+      fell in love with it.
+      </p>
+
+      <p>
+      <span id = "difference"></span> years later, as much as this country has changed, it has also 
+      remained the same. The ordinary people I meet are kind, welcoming, and unassuming. 
+      Step out of big cities and one can't help but feel a connection to the earth. 
+      The white man's pluck, the black and brown man's sufferings, and the 
+      spirits of Native Americans long gone have shaped this rugged land
+      into a free-spirited nation that I am only now beginning to truly understand.
+      I've travelled the world and there's no place else I'd call home.
+      </p>
+
+      <p>As I started writing, I realized the account is
+      going to be so huge that none of the hapless readers is going to have the
+      patience to finish it all in one sitting. So I've written it in 12 parts
+      to hopefully mitigate any indigestions!
+      </p>
+
+      <p>
+      Dedicated to my Dad, who painstakingly scanned all my trip pictures, annotated them, and linked them into the text. 
+      He vicariously followed my trip from halfway across the globe, located each and every one of my stops on a Rand McNally Atlas,
+      scanned the map fragments, and inserted them like a pro at just the right places in the text, all before he ever set foot in the US!
+      </p>
+    </main>
+    <script src = "script.js"></script>
+    <script>
+      dd = document.getElementById("difference");
+      date = new Date();
+      currentyear = date.getFullYear();
+      datedifference = currentyear - 1999;
+      dd.innerHTML = datedifference;</script>
+  </body>
+</html>
